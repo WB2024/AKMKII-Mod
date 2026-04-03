@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* 
+**
+** Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+	android:keyWidth="9.8%p" 
+	android:horizontalGap="0.2%p"
+	android:verticalGap="0.1%p" 
+	android:keyHeight="@dimen/key_height">
+
+    
+     <Row>
+        <Key android:codes="49" android:keyEdgeFlags="left" android:keyLabel="@string/symbol_key_1" />
+        <Key android:codes="50" android:keyLabel="@string/symbol_key_2" />
+        <Key android:codes="51" android:keyLabel="@string/symbol_key_3" />
+        <Key android:codes="52" android:keyLabel="@string/symbol_key_4" />
+        <Key android:codes="53" android:keyLabel="@string/symbol_key_5" />
+        <Key android:codes="54" android:keyLabel="@string/symbol_key_6" />
+        <Key android:codes="55" android:keyLabel="@string/symbol_key_7" />
+        <Key android:codes="56" android:keyLabel="@string/symbol_key_8" />
+        <Key android:codes="57" android:keyLabel="@string/symbol_key_9" />
+        <Key android:codes="48" android:keyEdgeFlags="right" android:keyLabel="@string/symbol_key_10" />
+    </Row>
+    <Row>
+        <Key android:horizontalGap="5.2%p" android:codes="33" android:keyEdgeFlags="left" 
+            android:keyLabel="@string/symbol_key_2_1" />
+        <Key android:codes="64" android:keyLabel="@string/symbol_key_2_2" />
+        <Key android:codes="35" android:keyLabel="@string/symbol_key_2_3" />
+        <Key android:codes="126" android:keyLabel="@string/symbol_key_2_4" />
+        <Key android:codes="47" android:keyLabel="@string/symbol_key_2_5" />
+        <Key android:codes="94" android:keyLabel="@string/symbol_key_2_6" />
+        <Key android:codes="38" android:keyLabel="@string/symbol_key_2_7" />
+        <Key android:codes="40" android:keyLabel="@string/symbol_key_2_8" />
+        <Key android:codes="41" android:keyEdgeFlags="right" android:keyLabel="@string/symbol_key_2_9" />
+    </Row>
+    <Row>
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_shift" android:keyEdgeFlags="left" 
+            android:isModifier="true" android:isSticky="true" android:keyIcon="@drawable/key_caps_off"/>
+        <Key android:codes="45" android:keyLabel="@string/symbol_key_3_1" />
+        <Key android:codes="39" android:keyLabel="@string/symbol_key_3_2" />
+        <Key android:codes="34" android:keyLabel="@string/symbol_key_3_3" />
+        <Key android:codes="58" android:keyLabel="@string/symbol_key_3_4" />
+        <Key android:codes="59" android:keyLabel="@string/symbol_key_3_5" />
+        <Key android:codes="92" android:keyLabel="@string/symbol_key_3_6" />
+        <Key android:codes="63" android:keyLabel="@string/symbol_key_3_7" />
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_back" android:keyEdgeFlags="right" 
+            android:isRepeatable="true" android:keyIcon="@drawable/key_delete_n" 
+            android:isModifier="true"/>
+    </Row>
+    
+    <Row android:rowEdgeFlags="bottom">
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_hide" android:keyEdgeFlags="left" 
+            android:keyIcon="@drawable/key_keyboard_close_n" android:iconPreview="@drawable/key_keyboard_close_n"
+            android:isModifier="true"/>
+        <Key android:keyWidth="19.8%p" android:codes="@integer/key_global" android:keyIcon="@drawable/key_ch_etc_n" 
+            android:isModifier="true"/>
+        <Key android:keyWidth="39.8%p" android:codes="@integer/key_space" android:isRepeatable="true" 
+            android:keyIcon="@drawable/key_spacebar_1_n"
+            android:isModifier="true"/>
+        <Key android:keyLabel="@string/label_dot1_key" android:isModifier="true"/>
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_enter" android:keyEdgeFlags="right" 
+            android:keyIcon="@drawable/key_enter_bg_n" android:iconPreview="@drawable/key_enter_bg_n"
+            android:isModifier="true"/>
+    </Row>
+</Keyboard>

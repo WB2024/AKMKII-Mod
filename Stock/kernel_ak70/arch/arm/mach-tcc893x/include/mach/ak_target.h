@@ -1,0 +1,5 @@
+#define CUR_AK MODEL_AK70
+#define CUR_AK_REV AK70_HW_TP
+#define COMBINE_MEMORY 
+#define AK_MODEL_NAME "AK70_MKII"
+#define CUR_AK_SUB MKII

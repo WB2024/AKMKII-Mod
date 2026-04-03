@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  KeyPad  -->
+    <dimen name="keypad_width">360dip</dimen>
+	<dimen name="keypad_min_height">216dp</dimen>
+	<dimen name="keypad_min_height_ru">267dp</dimen>
+    <dimen name="key_height">50dip</dimen>
+
+    <dimen name="key_font_size">14.7sp</dimen>
+    <dimen name="key_font_size_big">16.7sp</dimen>
+    
+    
+    <dimen name="candidate_font_height">20sp</dimen>
+    <dimen name="candidate_vertical_padding">6sp</dimen>
+	<dimen name="candidate_under_line_height">1dp</dimen>
+
+    <dimen name="font_size_space">16sp</dimen>
+    <dimen name="fontsize_35">35dip</dimen>
+    
+    <!-- Jp Keyboard Popup -->
+    <dimen name="jp_popup_text_size">22sp</dimen>
+    <dimen name="jp_popup_btn_size">72dp</dimen> <!-- 60dp -->
+    <dimen name="jp_popup_btn_padding_size">60dp</dimen>
+    <dimen name="jp_popup_btn_padding_size2">120dp</dimen>
+    <dimen name="jp_popup_text_width">75dp</dimen>
+    <dimen name="jp_popup_text_height">50dp</dimen>
+    <dimen name="jp_popup_text_width_expanded">88dp</dimen>
+    <dimen name="jp_popup_text_height_expanded">51dp</dimen>
+    
+    
+    <!-- En Keyboard Popup -->
+    <dimen name="en_popup_height">44dp</dimen>
+    <dimen name="en_popup_text_width">51dp</dimen>
+    <dimen name="en_popup_key_width5">49dp</dimen>
+    <dimen name="en_popup_key_width6">42dp</dimen>
+    <dimen name="en_popup_key_margin">1dp</dimen>
+    <dimen name="en_popup_key_layout_width">250dp</dimen>
+    <dimen name="en_popup_closebtn_width">70dp</dimen>
+    <dimen name="en_popup_btn_height">40dp</dimen>
+    <dimen name="en_popup_closebtn_x">250dp</dimen>
+    <dimen name="en_popup_textsize">18sp</dimen>
+    <dimen name="en_popup_padding_bottom">5dp</dimen>
+    
+    <dimen name="en_popup_space_line_width">2dp</dimen>
+    <dimen name="en_popup_space_line_height">18dp</dimen>
+</resources>

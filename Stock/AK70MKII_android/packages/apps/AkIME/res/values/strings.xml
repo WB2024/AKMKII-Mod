@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Title for Latin keyboard -->
+    <string name="ime_name">AkIME</string>
+    <string name="app_name">AkIME</string>
+
+    <!-- Symbols that are commonly considered word separators in this language -->
+    <string name="word_separators">\u0020.,;:!?\n()[]*&amp;@{}/&lt;&gt;_+=|&quot;</string>
+
+    <!-- Labels on soft keys -->
+<!--     <string name="label_go_key">이동</string>
+    <string name="label_next_key">다음</string>
+    <string name="label_send_key">보내기</string>
+    <string name="label_search_key">찾기</string>
+    <string name="label_done_key">엔터</string>
+-->
+	<string name="romaji_big_s_beta">ẞ</string>
+    <string name="label_ko_key">가</string>
+    <string name="label_eng_key">A</string>
+    <string name="label_jp_key">あ</string>
+    <string name="label_jp_hq_key">あ/A</string>
+    <string name="label_pin_key">中</string>
+    <string name="label_dot1_key">.</string>
+    <string name="label_dot2_key">,</string>
+	<string name="label_space_key">SPACE</string>
+	<string name="label_fr_key">FR</string>
+	<string name="label_de_key">DE</string>
+	<string name="label_ru_key">RU</string>
+
+    <!-- qwerty -->
+    <string name="qwerty_key_q">q</string>
+    <string name="qwerty_key_w">w</string>
+    <string name="qwerty_key_e">e</string>
+    <string name="qwerty_key_r">r</string>
+    <string name="qwerty_key_t">t</string>
+    <string name="qwerty_key_y">y</string>
+    <string name="qwerty_key_u">u</string>
+    <string name="qwerty_key_i">i</string>
+    <string name="qwerty_key_o">o</string>
+    <string name="qwerty_key_p">p</string>
+    
+    <string name="qwerty_key_a">a</string>
+    <string name="qwerty_key_s">s</string>
+    <string name="qwerty_key_d">d</string>
+    <string name="qwerty_key_f">f</string>
+    <string name="qwerty_key_g">g</string>
+    <string name="qwerty_key_h">h</string>
+    <string name="qwerty_key_j">j</string>
+    <string name="qwerty_key_k">k</string>
+    <string name="qwerty_key_l">l</string>
+    
+    <string name="qwerty_key_z">z</string>
+    <string name="qwerty_key_x">x</string>
+    <string name="qwerty_key_c">c</string>
+    <string name="qwerty_key_v">v</string>
+    <string name="qwerty_key_b">b</string>
+    <string name="qwerty_key_n">n</string>
+    <string name="qwerty_key_m">m</string>
+    
+    <!-- hangul -->
+    <string name="hangul_key_1_1">ㅂ</string>
+    <string name="hangul_key_1_2">ㅈ</string>
+    <string name="hangul_key_1_3">ㄷ</string>
+    <string name="hangul_key_1_4">ㄱ</string>
+    <string name="hangul_key_1_5">ㅅ</string>
+    <string name="hangul_key_1_6">ㅛ</string>
+    <string name="hangul_key_1_7">ㅕ</string>
+    <string name="hangul_key_1_8">ㅑ</string>
+    <string name="hangul_key_1_9">ㅐ</string>
+    <string name="hangul_key_1_10">ㅔ</string>
+    
+    <string name="hangul_key_2_1">ㅁ</string>
+    <string name="hangul_key_2_2">ㄴ</string>
+    <string name="hangul_key_2_3">ㅇ</string>
+    <string name="hangul_key_2_4">ㄹ</string>
+    <string name="hangul_key_2_5">ㅎ</string>
+    <string name="hangul_key_2_6">ㅗ</string>
+    <string name="hangul_key_2_7">ㅓ</string>
+    <string name="hangul_key_2_8">ㅏ</string>
+    <string name="hangul_key_2_9">ㅣ</string>
+    
+    <string name="hangul_key_3_1">ㅋ</string>
+    <string name="hangul_key_3_2">ㅌ</string>
+    <string name="hangul_key_3_3">ㅊ</string>
+    <string name="hangul_key_3_4">ㅍ</string>
+    <string name="hangul_key_3_5">ㅠ</string>
+    <string name="hangul_key_3_6">ㅜ</string>
+    <string name="hangul_key_3_7">ㅡ</string>
+    
+    <!-- hangul shift -->
+    <string name="hangul_key_shift_1">ㅃ</string>
+    <string name="hangul_key_shift_2">ㅉ</string>
+    <string name="hangul_key_shift_3">ㄸ</string>
+    <string name="hangul_key_shift_4">ㄲ</string>
+    <string name="hangul_key_shift_5">ㅆ</string>
+    <string name="hangul_key_shift_6">ㅒ</string>
+    <string name="hangul_key_shift_7">ㅖ</string>
+    
+    <!-- japan -->
+    <string name="hira_key_1_1">あ</string>
+    <string name="hira_key_1_2">か</string>
+    <string name="hira_key_1_3">さ</string>
+    <string name="hira_key_2_1">た</string>
+    <string name="hira_key_2_2">な</string>
+    <string name="hira_key_2_3">は</string>
+    <string name="hira_key_3_1">ま</string>
+    <string name="hira_key_3_2">や</string>
+    <string name="hira_key_3_3">ら</string>
+    <string name="hira_key_4_2">わ</string>
+    <string name="hira_key_4_3">。、</string>
+    <string name="japan_key_space">スペース</string>
+    
+    
+    <string name="hira_key_1_01">あ</string>
+    <string name="hira_key_2_01">い</string>
+    <string name="hira_key_3_01">う</string>
+    <string name="hira_key_4_01">え</string>
+    <string name="hira_key_5_01">お</string>
+    
+    <string name="hira_key_1_02">か</string>
+    <string name="hira_key_2_02">き</string>
+    <string name="hira_key_3_02">く</string>
+    <string name="hira_key_4_02">け</string>
+    <string name="hira_key_5_02">こ</string>
+    
+    <string name="hira_key_1_03">さ</string>
+    <string name="hira_key_2_03">し</string>
+    <string name="hira_key_3_03">す</string>
+    <string name="hira_key_4_03">せ</string>
+    <string name="hira_key_5_03">そ</string>
+    
+    <string name="hira_key_1_04">た</string>
+    <string name="hira_key_2_04">ち</string>
+    <string name="hira_key_3_04">つ</string>
+    <string name="hira_key_4_04">て</string>
+    <string name="hira_key_5_04">と</string>
+    
+    <string name="hira_key_1_05">な</string>
+    <string name="hira_key_2_05">に</string>
+    <string name="hira_key_3_05">ぬ</string>
+    <string name="hira_key_4_05">ね</string>
+    <string name="hira_key_5_05">の</string>
+    
+    <string name="hira_key_1_06">は</string>
+    <string name="hira_key_2_06">ひ</string>
+    <string name="hira_key_3_06">ふ</string>
+    <string name="hira_key_4_06">へ</string>
+    <string name="hira_key_5_06">ほ</string>
+    
+    <string name="hira_key_1_07">ま</string>
+    <string name="hira_key_2_07">み</string>
+    <string name="hira_key_3_07">む</string>
+    <string name="hira_key_4_07">め</string>
+    <string name="hira_key_5_07">も</string>
+    
+    <string name="hira_key_1_08">や</string>
+    <string name="hira_key_2_08"></string>
+    <string name="hira_key_3_08">ゆ</string>
+    <string name="hira_key_4_08"></string>
+    <string name="hira_key_5_08">よ</string>
+    
+    <string name="hira_key_1_09">ら</string>
+    <string name="hira_key_2_09">り</string>
+    <string name="hira_key_3_09">る</string>
+    <string name="hira_key_4_09">れ</string>
+    <string name="hira_key_5_09">ろ</string>
+    
+    <string name="hira_key_1_10">わ</string>
+    <string name="hira_key_2_10">を</string>
+    <string name="hira_key_3_10">ん</string>
+    <string name="hira_key_4_10">-</string>
+    <string name="hira_key_5_10"></string>
+    		
+    <string name="hira_key_1_11">\"</string>
+    <string name="hira_key_2_11">\?</string>
+    <string name="hira_key_3_11">!</string>
+    <string name="hira_key_4_11">\'</string>
+    <string name="hira_key_5_11">。</string>
+    
+    <!-- qwerty -->
+    <string name="jpn_q_key_1">(</string>
+    <string name="jpn_q_key_2">)</string>
+    <string name="jpn_q_key_3">[</string>
+    <string name="jpn_q_key_4">]</string>
+    
+    <string name="jpn_q_key_5">-</string>
+    <string name="jpn_q_key_6">_</string>
+    <string name="jpn_q_key_7">/</string>
+    <string name="jpn_q_key_8">:</string>
+    <string name="jpn_q_key_9">&amp;</string>
+    <string name="jpn_q_key_10">\@</string>
+    <string name="jpn_q_key_11">\#</string>
+    <string name="jpn_q_key_12">*</string>
+    <string name="jpn_q_key_13">^</string>
+    <string name="jpn_q_key_14">\'</string>
+    
+    <string name="jpn_q_key_15">,</string>
+    <string name="jpn_q_key_16">.</string>
+    <string name="jpn_q_key_17">!</string>
+    <string name="jpn_q_key_18">\?</string>
+    <string name="jpn_q_key_19">&lt;</string>
+    <string name="jpn_q_key_20">&gt;</string>
+    <string name="jpn_q_key_21">~</string>
+    <string name="jpn_q_key_22">+</string>
+    
+    <!-- 2015.10.12 yunsuk -->
+    <string name="jpn_q_key_hypen">ー</string>
+    
+    
+    <!-- symbol -->
+    <string name="symbol_key_1">1</string>
+    <string name="symbol_key_2">2</string>
+    <string name="symbol_key_3">3</string>
+    <string name="symbol_key_4">4</string>
+    <string name="symbol_key_5">5</string>
+    <string name="symbol_key_6">6</string>
+    <string name="symbol_key_7">7</string>
+    <string name="symbol_key_8">8</string>
+    <string name="symbol_key_9">9</string>
+    <string name="symbol_key_10">0</string>
+    
+    <string name="symbol_key_2_1">!</string>
+    <string name="symbol_key_2_2">\@</string>
+    <string name="symbol_key_2_3">\#</string>
+    <string name="symbol_key_2_4">~</string>
+    <string name="symbol_key_2_5">/</string>
+    <string name="symbol_key_2_6">^</string>
+    <string name="symbol_key_2_7">&amp;</string>
+    <string name="symbol_key_2_8">(</string>
+    <string name="symbol_key_2_9">)</string>
+    
+    <string name="symbol_key_3_1">-</string>
+    <string name="symbol_key_3_2">"'"</string>
+    <string name="symbol_key_3_3">\"</string>
+    <string name="symbol_key_3_4">:</string>
+    <string name="symbol_key_3_5">;</string>
+    <string name="symbol_key_3_6">\\</string>
+    <string name="symbol_key_3_7">\?</string>
+
+    <!-- symbol shift -->
+    <string name="symbol_key_shift_1_1">+</string>
+    <string name="symbol_key_shift_1_2">=</string>
+    <string name="symbol_key_shift_1_3">%</string>
+    <string name="symbol_key_shift_1_4">￦</string>
+    <string name="symbol_key_shift_1_5">&lt;</string>
+    <string name="symbol_key_shift_1_6">&gt;</string>
+    <string name="symbol_key_shift_1_7">{</string>
+    <string name="symbol_key_shift_1_8">}</string>
+    <string name="symbol_key_shift_1_9">|</string>
+    
+    <string name="symbol_key_shift_2_1">[</string>
+    <string name="symbol_key_shift_2_2">]</string>
+    <string name="symbol_key_shift_2_3">$</string>
+    <string name="symbol_key_shift_2_4">¥</string>
+    <string name="symbol_key_shift_2_5">•</string>
+    <string name="symbol_key_shift_2_6">_</string>
+    <string name="symbol_key_shift_2_7">*</string>
+  
+    <string name="symbol_key_40">÷</string>
+    <string name="symbol_key_41">×</string>
+    <string name="symbol_key_42">…</string>
+    <string name="symbol_key_43">『</string>
+    <string name="symbol_key_44">』</string>
+    <string name="symbol_key_45">￥</string>
+    <string name="symbol_key_46">♥</string>
+    <string name="symbol_key_47">「</string>
+    <string name="symbol_key_48">」</string>
+    
+    <!-- changjie -->
+    <string name="changjie_q">手</string>
+    <string name="changjie_w">田</string>
+    <string name="changjie_e">水</string>
+    <string name="changjie_r">口</string>
+    <string name="changjie_t">廿</string>
+    <string name="changjie_y">卜</string>
+    <string name="changjie_u">山</string>
+    <string name="changjie_i">戈</string>
+    <string name="changjie_o">人</string>
+    <string name="changjie_p">心</string>
+
+    <string name="changjie_a">日</string>
+    <string name="changjie_s">尸</string>
+    <string name="changjie_d">木</string>
+    <string name="changjie_f">火</string>
+    <string name="changjie_g">土</string>
+    <string name="changjie_h">竹</string>
+    <string name="changjie_j">十</string>
+    <string name="changjie_k">大</string>
+    <string name="changjie_l">中</string>
+    
+    <string name="changjie_shift">速成</string>
+    <string name="changjie_z">重</string>
+    <string name="changjie_x">難</string>
+    <string name="changjie_c">金</string>
+    <string name="changjie_v">女</string>
+    <string name="changjie_b">月</string>
+    <string name="changjie_n">弓</string>
+    <string name="changjie_m">一</string>
+
+    <!-- PopupText 2014.05.08 -->
+    <string name="popup_a">àáǎãȧâäåāąăæ</string>
+	<string name="popup_b">bъ</string>
+    <string name="popup_c">ćĉčċç</string>
+    <string name="popup_d">ďḑðđɖ</string>
+    <string name="popup_e">éěēèęẽėêëə</string>
+    <string name="popup_f"></string>
+    <string name="popup_g">ĝǵǧģğʒ</string>
+    <string name="popup_h">ȟĥħƕ</string>
+    <string name="popup_i">įíǐïĩiîɨı</string>
+    <string name="popup_j">ĵ</string>
+    <string name="popup_k">ǩḱķ</string>
+    <string name="popup_l">ĺļł</string>
+    <string name="popup_m">ḿ</string>
+    <string name="popup_n">ňńñņ</string>
+    <string name="popup_o">õǒöőóòøōǫ</string>
+    <string name="popup_p"></string>
+    <string name="popup_q"></string>
+    <string name="popup_r">řŕȓ</string>
+    <string name="popup_s">şśšșŝß</string>
+    <string name="popup_t">ťțŧ</string>
+    <string name="popup_u">ŭüūǔųůűũúù</string>
+    <string name="popup_v">ṽ</string>
+    <string name="popup_w">ẃ</string>
+    <string name="popup_x">ẋ</string>
+    <string name="popup_y">ȳỹÿý</string>
+    <string name="popup_z">žź</string>
+    
+    
+    <!--  Rus  -->
+    <string name="rus_1_1">й</string>
+    <string name="rus_1_2">ц</string>
+    <string name="rus_1_3">у</string>
+    <string name="rus_1_4">к</string>
+    <string name="rus_1_5">е</string>
+    <string name="rus_1_6">н</string>
+    <string name="rus_1_7">г</string>
+    <string name="rus_1_8">ш</string>
+    <string name="rus_1_9">щ</string>
+    <string name="rus_1_10">з</string>
+    
+    <string name="rus_2_1">ф</string>
+    <string name="rus_2_2">ы</string>
+    <string name="rus_2_3">в</string>
+    <string name="rus_2_4">a</string>
+    <string name="rus_2_5">п</string>
+    <string name="rus_2_6">р</string>
+    <string name="rus_2_7">о</string>
+    <string name="rus_2_8">л</string>
+    <string name="rus_2_9">д</string>
+    <string name="rus_2_10">ж</string>
+    
+    <string name="rus_3_1">я</string>
+    <string name="rus_3_2">ч</string>
+    <string name="rus_3_3">с</string>
+    <string name="rus_3_4">м</string>
+    <string name="rus_3_5">и</string>
+    <string name="rus_3_6">т</string>
+    <string name="rus_3_7">ь</string>
+    <string name="rus_3_8">б</string>
+    <string name="rus_3_9">ю</string>
+    
+    <string name="rus_4_1">ё</string>
+    <string name="rus_4_2">!</string>
+    <string name="rus_4_3">\?</string>
+    <string name="rus_4_4">-</string>
+    <string name="rus_4_5">э</string>
+    <string name="rus_4_6">х</string>
+    <string name="rus_4_7">ъ</string>
+    
+    <!-- upper -->
+    <!-- 
+    <string name="rus_up_1_1">Й</string>
+    <string name="rus_up_1_2">Ц</string>
+    <string name="rus_up_1_3">У</string>
+    <string name="rus_up_1_4">Е</string>
+    <string name="rus_up_1_5">Н</string>
+    <string name="rus_up_1_6">Г</string>
+    <string name="rus_up_1_7">ш</string>
+    <string name="rus_up_1_8">Ш</string>
+    <string name="rus_up_1_9">З</string>
+    <string name="rus_up_1_10">Х</string>
+    
+    <string name="rus_up_2_1">Ф</string>
+    <string name="rus_up_2_2">Ы</string>
+    <string name="rus_up_2_3">В</string>
+    <string name="rus_up_2_4">А</string>
+    <string name="rus_up_2_5">П</string>
+    <string name="rus_up_2_6">Р</string>
+    <string name="rus_up_2_7">О</string>
+    <string name="rus_up_2_8">Л</string>
+    <string name="rus_up_2_9">Д</string>
+    <string name="rus_up_2_10">Ж</string>
+    
+    <string name="rus_up_3_1">Я</string>
+    <string name="rus_up_3_2">Ч</string>
+    <string name="rus_up_3_3">С</string>
+    <string name="rus_up_3_4">М</string>
+    <string name="rus_up_3_5">И</string>
+    <string name="rus_up_3_6">Т</string>
+    <string name="rus_up_3_7">Ь</string>
+    <string name="rus_up_3_8">Б</string>
+    <string name="rus_up_3_9">Ю</string>
+    
+    <string name="rus_up_4_1">Ё</string>
+    <string name="rus_up_4_2">!</string>
+    <string name="rus_up_4_3">\?</string>
+    <string name="rus_up_4_4">-</string>
+    <string name="rus_up_4_5">Э</string>
+    <string name="rus_up_4_6">Х</string>
+    <string name="rus_up_4_7">Ъ</string>
+     -->
+     
+    <!-- Langauge -->
+    <string name="keyboard_lan_kor">한국어</string>
+    <string name="keyboard_lan_jpn">日本語</string>
+    <string name="keyboard_lan_cn">中文 (简体)</string>
+    <string name="keyboard_lan_tw">中文 (繁體)</string>
+    <string name="keyboard_lan_de">Deutsch</string>
+    <string name="keyboard_lan_rus">Pусский</string>
+    <string name="keyboard_lan_eng">English</string>
+</resources>

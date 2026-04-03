@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* 
+**
+** Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="20.0%p"
+    android:horizontalGap="1.0px"
+    android:verticalGap="1.0px"
+    android:keyHeight="@dimen/key_height">
+
+     <Row>
+        <Key android:codes="@integer/jp_key_turn" android:keyEdgeFlags="left" android:keyIcon="@drawable/key_jp_return" 
+            android:iconPreview="@drawable/key_jp_return" android:isModifier="true"/>
+        <Key android:codes="901" android:keyIcon="@drawable/key_jp_b_1" 
+            android:iconPreview="@drawable/key_jp_b_1_zoom" android:isModifier="true"/>
+        <Key android:codes="97,98,99" android:keyIcon="@drawable/key_jp_b_2" 
+            android:iconPreview="@drawable/key_jp_b_2_zoom"/>
+        <Key android:codes="100,101,102" android:keyIcon="@drawable/key_jp_b_3" 
+            android:iconPreview="@drawable/key_jp_b_3_zoom"/>
+        <Key android:codes="@integer/key_back" android:keyEdgeFlags="right" android:isRepeatable="true" 
+            android:keyIcon="@drawable/key_delete_n"
+            android:isModifier="true"/>
+    </Row>
+    <Row>
+        <Key android:codes="@integer/key_blank" android:keyEdgeFlags="left" android:keyLabel=" "/>
+        <Key android:codes="103,104,105" android:keyIcon="@drawable/key_jp_b_4" 
+            android:iconPreview="@drawable/key_jp_b_4_zoom"/>
+        <Key android:codes="106,107,108" android:keyIcon="@drawable/key_jp_b_5" 
+            android:iconPreview="@drawable/key_jp_b_5_zoom"/>
+        <Key android:codes="109,110,111" android:keyIcon="@drawable/key_jp_b_6" 
+            android:iconPreview="@drawable/key_jp_b_6_zoom"/>
+        <Key android:codes="@integer/key_blank" android:keyEdgeFlags="right" android:keyLabel=" "/>
+    </Row>
+    <Row>
+        <Key android:codes="@integer/jp_key_global" android:keyEdgeFlags="left" android:keyIcon="@drawable/key_jp_caps_2" 
+            android:iconPreview="@drawable/key_jp_caps_2" android:isModifier="true"/>
+        <Key android:codes="112,113,114,115" android:keyIcon="@drawable/key_jp_b_7" 
+            android:iconPreview="@drawable/key_jp_b_7_zoom"/>
+        <Key android:codes="116,117,118" android:keyIcon="@drawable/key_jp_b_8" 
+            android:iconPreview="@drawable/key_jp_b_8_zoom"/>
+        <Key android:codes="119,120,121,122" android:keyIcon="@drawable/key_jp_b_9" 
+            android:iconPreview="@drawable/key_jp_b_9_zoom"/>
+        <Key android:codes="203" android:keyEdgeFlags="right" android:keyIcon="@drawable/key_spacebar_2_n" 
+            android:iconPreview="@drawable/key_spacebar_2_n" android:isModifier="true"/>
+    </Row>
+    <Row>
+        <Key android:codes="@integer/key_hide" android:keyEdgeFlags="left" android:keyIcon="@drawable/key_keyboard_close_n" 
+            android:iconPreview="@drawable/key_keyboard_close_n" android:isModifier="true"/>
+        <Key android:codes="204" android:keyIcon="@drawable/key_jp_b_10" 
+            android:iconPreview="@drawable/key_jp_b_10_zoom" android:isModifier="true"/>
+        <Key android:codes="902" android:keyIcon="@drawable/key_jp_b_11" 
+            android:iconPreview="@drawable/key_jp_b_11_zoom" android:isModifier="true"/>
+        <Key android:codes="903" android:keyIcon="@drawable/key_jp_b_12" 
+            android:iconPreview="@drawable/key_jp_b_12_zoom" android:isModifier="true"/>
+        <Key android:codes="@integer/key_enter" android:keyEdgeFlags="right" android:keyIcon="@drawable/key_enter_bg_n" 
+            android:iconPreview="@drawable/key_enter_bg_n" android:isModifier="true"/>
+    </Row>
+    
+</Keyboard>
+    

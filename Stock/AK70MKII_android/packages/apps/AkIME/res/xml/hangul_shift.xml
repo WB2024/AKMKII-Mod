@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* 
+**
+** Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+	android:keyWidth="9.8%p" 
+	android:horizontalGap="0.2%p"
+	android:verticalGap="0.1%p" 
+	android:keyHeight="@dimen/key_height">
+
+   <Row>
+        <Key android:codes="113" android:keyEdgeFlags="left" android:keyLabel="@string/hangul_key_shift_1" />
+        <Key android:codes="119" android:keyLabel="@string/hangul_key_shift_2" />
+        <Key android:codes="101" android:keyLabel="@string/hangul_key_shift_3" />
+        <Key android:codes="114" android:keyLabel="@string/hangul_key_shift_4" />
+        <Key android:codes="116" android:keyLabel="@string/hangul_key_shift_5" />
+        <Key android:codes="121" android:keyLabel="@string/hangul_key_1_6" />
+        <Key android:codes="117" android:keyLabel="@string/hangul_key_1_7" />
+        <Key android:codes="105" android:keyLabel="@string/hangul_key_1_8" />
+        <Key android:codes="111" android:keyLabel="@string/hangul_key_shift_6" />
+        <Key android:codes="112" android:keyEdgeFlags="right" android:keyLabel="@string/hangul_key_shift_7" />
+    </Row>
+    <Row>
+        <Key android:horizontalGap="5.2%p" android:codes="97" android:keyEdgeFlags="left" android:keyLabel="@string/hangul_key_2_1" />
+        <Key android:codes="115" android:keyLabel="@string/hangul_key_2_2" />
+        <Key android:codes="100" android:keyLabel="@string/hangul_key_2_3" />
+        <Key android:codes="102" android:keyLabel="@string/hangul_key_2_4" />
+        <Key android:codes="103" android:keyLabel="@string/hangul_key_2_5" />
+        <Key android:codes="104" android:keyLabel="@string/hangul_key_2_6" />
+        <Key android:codes="106" android:keyLabel="@string/hangul_key_2_7" />
+        <Key android:codes="107" android:keyLabel="@string/hangul_key_2_8" />
+        <Key android:codes="108" android:keyEdgeFlags="right" android:keyLabel="@string/hangul_key_2_9" />
+    </Row>
+    
+    <Row>
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_shift" android:keyEdgeFlags="left" 
+            android:isModifier="true" android:isSticky="true" android:keyIcon="@drawable/key_caps_on" />
+        <Key android:codes="122" android:keyLabel="@string/hangul_key_3_1" />
+        <Key android:codes="120" android:keyLabel="@string/hangul_key_3_2" />
+        <Key android:codes="99" android:keyLabel="@string/hangul_key_3_3" />
+        <Key android:codes="118" android:keyLabel="@string/hangul_key_3_4" />
+        <Key android:codes="98" android:keyLabel="@string/hangul_key_3_5" />
+        <Key android:codes="110" android:keyLabel="@string/hangul_key_3_6" />
+        <Key android:codes="109" android:keyLabel="@string/hangul_key_3_7" />
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_back" 
+            android:keyEdgeFlags="right" android:isRepeatable="true" 
+            android:keyIcon="@drawable/key_delete_n" 
+            android:isModifier="true"/>
+   </Row>
+    
+    <Row android:rowEdgeFlags="bottom">
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_hide" android:keyEdgeFlags="left" 
+            android:keyIcon="@drawable/key_keyboard_close_n" 
+            android:iconPreview="@drawable/key_keyboard_close_n"
+            android:isModifier="true"/>
+        <Key android:codes="-2" android:keyIcon="@drawable/key_ch_123_n" 
+            android:iconPreview="@drawable/key_ch_123_n"
+            android:isModifier="true"/>
+        <Key android:codes="@integer/key_global" android:keyIcon="@drawable/key_ch_etc_n" 
+            android:iconPreview="@drawable/key_ch_etc_n"
+            android:isModifier="true"/>
+        <Key android:keyWidth="39.8%p" android:codes="@integer/key_space" android:isRepeatable="true" 
+            android:keyIcon="@drawable/key_spacebar_1_n" android:isModifier="true"/>
+        <Key android:keyLabel="@string/label_dot1_key" android:isModifier="true"/>
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_enter" android:keyEdgeFlags="right" 
+            android:isModifier="true" android:keyIcon="@drawable/key_enter_bg_n" 
+            android:iconPreview="@drawable/key_enter_bg_n"/>
+    </Row>
+</Keyboard>
+    

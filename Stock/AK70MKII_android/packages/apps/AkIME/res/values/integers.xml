@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!--  Common Key  -->
+    <integer name="key_hide">-220</integer>
+    <integer name="key_global">-101</integer>
+    <integer name="key_shift">-1</integer>
+    <!--
+    Original, 180227 yunsuk [Original Key Code No!]
+    <integer name="key_back">-5</integer>
+
+    -->
+    <integer name="key_back">-6</integer>
+    
+    <integer name="key_enter">10</integer>
+    <integer name="key_space">32</integer>
+    <integer name="key_blank">900</integer>
+    
+    <!-- Qwerty -->
+	<integer name="qwerty_code_a">97</integer>
+	<integer name="qwerty_code_b">98</integer>
+	<integer name="qwerty_code_c">99</integer>
+	<integer name="qwerty_code_d">100</integer>
+	<integer name="qwerty_code_e">101</integer>
+	<integer name="qwerty_code_f">102</integer>
+	<integer name="qwerty_code_g">103</integer>
+	<integer name="qwerty_code_h">104</integer>
+	<integer name="qwerty_code_i">105</integer>
+	<integer name="qwerty_code_j">106</integer>
+	<integer name="qwerty_code_k">107</integer>
+	<integer name="qwerty_code_l">108</integer>
+	<integer name="qwerty_code_m">109</integer>
+	<integer name="qwerty_code_n">110</integer>
+	<integer name="qwerty_code_o">111</integer>
+	<integer name="qwerty_code_p">112</integer>
+	<integer name="qwerty_code_q">113</integer>
+	<integer name="qwerty_code_r">114</integer>
+	<integer name="qwerty_code_s">115</integer>
+	<integer name="qwerty_code_t">116</integer>
+	<integer name="qwerty_code_u">117</integer>
+	<integer name="qwerty_code_v">118</integer>
+	<integer name="qwerty_code_w">119</integer>
+	<integer name="qwerty_code_x">120</integer>
+	<integer name="qwerty_code_y">121</integer>
+	<integer name="qwerty_code_z">122</integer>
+
+    <!--  Japan 5line Key  -->
+    <integer name="jp_key_next">-101</integer>
+    
+    <integer name="jp_key_turn">200</integer>
+    <integer name="jp_key_mode_change">201</integer>
+    <integer name="jp_key_eisukana">202</integer>
+    <integer name="jp_key_space">203</integer>
+    <integer name="jp_key_big_small">204</integer>
+    <integer name="jp_key_global">209</integer>
+    
+    <integer name="jp_key_a">300</integer>
+    <integer name="jp_key_e">301</integer>
+    <integer name="jp_key_i">302</integer>
+    <integer name="jp_key_o">303</integer>
+    <integer name="jp_key_u">304</integer>
+    
+    <integer name="jp_key_k_1">305</integer>
+	<integer name="jp_key_k_2">306</integer>
+	<integer name="jp_key_k_3">307</integer>
+	<integer name="jp_key_k_4">308</integer>
+	<integer name="jp_key_k_5">309</integer>
+	
+	<integer name="jp_key_s_1">310</integer>
+	<integer name="jp_key_s_2">311</integer>
+	<integer name="jp_key_s_3">312</integer>
+	<integer name="jp_key_s_4">313</integer>
+	<integer name="jp_key_s_5">314</integer>
+    
+	<integer name="jp_key_t_1">315</integer>
+	<integer name="jp_key_t_2">316</integer>
+	<integer name="jp_key_t_3">317</integer>
+	<integer name="jp_key_t_4">318</integer>
+	<integer name="jp_key_t_5">319</integer>
+    
+	<integer name="jp_key_n_1">320</integer>
+	<integer name="jp_key_n_2">321</integer>
+	<integer name="jp_key_n_3">322</integer>
+	<integer name="jp_key_n_4">323</integer>
+	<integer name="jp_key_n_5">324</integer>
+	
+	<integer name="jp_key_h_1">325</integer>
+	<integer name="jp_key_h_2">326</integer>
+	<integer name="jp_key_h_3">327</integer>
+	<integer name="jp_key_h_4">328</integer>
+	<integer name="jp_key_h_5">329</integer>
+	
+	<integer name="jp_key_m_1">330</integer>
+	<integer name="jp_key_m_2">331</integer>
+	<integer name="jp_key_m_3">332</integer>
+	<integer name="jp_key_m_4">333</integer>
+	<integer name="jp_key_m_5">334</integer>
+	
+	<integer name="jp_key_y_1">335</integer>
+	<integer name="jp_key_y_2">900</integer>
+	<integer name="jp_key_y_3">336</integer>
+	<integer name="jp_key_y_4">900</integer>
+	<integer name="jp_key_y_5">337</integer>
+	
+	<integer name="jp_key_r_1">338</integer>
+	<integer name="jp_key_r_2">339</integer>
+	<integer name="jp_key_r_3">340</integer>
+	<integer name="jp_key_r_4">341</integer>
+	<integer name="jp_key_r_5">342</integer>
+	
+	<integer name="jp_key_w_1">343</integer>
+	<integer name="jp_key_w_2">344</integer>
+	<integer name="jp_key_w_3">345</integer>
+	<integer name="jp_key_w_4">346</integer>
+	<integer name="jp_key_w_5">122</integer>
+	
+	
+</resources>

@@ -1,0 +1,10 @@
+#ifndef _LCD_AK380DISP_H
+#define _LCD_AK380DISP_H
+
+#define MIN_BRIGHTNESS		0
+#define MAX_BRIGHTNESS		11
+
+#define GAMMA_TABLE_COUNT	21
+
+
+#endif

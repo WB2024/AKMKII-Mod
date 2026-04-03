@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:layout_weight="1">
+    
+    <!--  top  -->
+    <LinearLayout
+        android:id="@+id/candidateview_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal" 
+        android:background="@color/candidate_popup_bg">
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="left" 
+            android:layout_weight="1">
+            
+            <LinearLayout
+                android:id="@+id/candidateview_up_data_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/jp_popup_text_height"
+                android:orientation="horizontal" >
+            </LinearLayout>
+			
+            <View
+                android:id="@+id/candidateview_centerline"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/candidate_popup_under_line" 
+                android:visibility="gone"/>
+            
+            <LinearLayout
+                android:id="@+id/candidateview_down_data_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/jp_popup_text_height"
+                android:orientation="horizontal" >
+			</LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/candidate_popup_under_line"/>
+        
+        <ImageView
+            android:id="@+id/candidate_show_btn"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:src="@drawable/icon_list_arrow_down"
+            android:scaleType="center"
+            style="@style/android:Widget.Material.ActionButton" />
+
+    </LinearLayout>
+	
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f214171b"/>
+    
+    <!-- list view  -->
+    <ScrollView
+        android:id="@+id/under_data_scrollview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dip" 
+        android:scrollbarSize="4dip"
+        android:scrollbarTrackVertical="@drawable/candidate_scroll_thumb"
+        android:scrollbarThumbVertical="@color/scrollbar_thumb_color"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/under_data_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="4dip"
+            android:background="@color/candidate_popup_scrolling_bg">
+
+        </LinearLayout>
+    </ScrollView>
+    
+</LinearLayout>

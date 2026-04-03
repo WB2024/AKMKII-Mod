@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    
+    <color name="textcolor_default">#ccffffff</color>
+	<color name="background_color">#f214171b</color>
+	<color name="popup_romaji_bg_color">#f2232a32</color>
+	
+	<color name="scrollbar_thumb_color">#ffb9a279</color>
+	
+	<!-- Key -->
+	<color name="key_background_press">#e6000000</color>
+	<color name="key_text_color">#ccffffff</color>
+
+	<!-- Simeji popup -->
+	<color name="simeji_popup_text_color">#ffb7ccf0</color>
+	
+	<!-- Candidate Popup -->
+	<color name="candidate_popup_bg">#f2242a32</color>
+	<color name="candidate_popup_scrolling_bg">#ff232a32</color>
+	<color name="candidate_popup_press">#fa0d131c</color>
+	<color name="candidate_popup_text_color">#ccffffff</color>
+	<color name="prev_popup_text_color">#ffffffff</color>
+	<color name="candidate_popup_under_line">#26ffffff</color>
+</resources>

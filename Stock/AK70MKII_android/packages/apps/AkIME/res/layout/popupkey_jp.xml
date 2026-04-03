@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_popup_easykey"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <Button
+        android:id="@+id/jp_btn_top"
+        android:layout_width="@dimen/jp_popup_btn_size"
+        android:layout_height="@dimen/jp_popup_btn_size"
+        android:layout_marginLeft="@dimen/jp_popup_btn_padding_size"
+        android:background="@drawable/jp_popup_btn_bg"
+        android:gravity="center"
+        android:textColor="@color/simeji_popup_text_color"
+        android:textSize="@dimen/jp_popup_text_size" />
+
+    <Button
+        android:id="@+id/jp_btn_left"
+        android:layout_width="@dimen/jp_popup_btn_size"
+        android:layout_height="@dimen/jp_popup_btn_size"
+        android:layout_marginTop="@dimen/jp_popup_btn_padding_size"
+        android:background="@drawable/jp_popup_btn_bg"
+        android:gravity="center"
+        android:textColor="@color/simeji_popup_text_color"
+        android:textSize="@dimen/jp_popup_text_size" />
+
+    <Button
+        android:id="@+id/jp_btn_right"
+        android:layout_width="@dimen/jp_popup_btn_size"
+        android:layout_height="@dimen/jp_popup_btn_size"
+        android:layout_marginLeft="@dimen/jp_popup_btn_padding_size2"
+        android:layout_marginTop="@dimen/jp_popup_btn_padding_size"
+        android:background="@drawable/jp_popup_btn_bg"
+        android:gravity="center"
+        android:textColor="@color/simeji_popup_text_color"
+        android:textSize="@dimen/jp_popup_text_size" />
+
+    <Button
+        android:id="@+id/jp_btn_bottom"
+        android:layout_width="@dimen/jp_popup_btn_size"
+        android:layout_height="@dimen/jp_popup_btn_size"
+        android:layout_marginLeft="@dimen/jp_popup_btn_padding_size"
+        android:layout_marginTop="@dimen/jp_popup_btn_padding_size2"
+        android:background="@drawable/jp_popup_btn_bg"
+        android:gravity="center"
+        android:textColor="@color/simeji_popup_text_color"
+        android:textSize="@dimen/jp_popup_text_size" />
+
+</FrameLayout>

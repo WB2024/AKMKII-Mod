@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* 
+**
+** Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="20.0%p"
+    android:horizontalGap="1.0px"
+    android:verticalGap="1.0px"
+    android:keyHeight="@dimen/key_height">
+
+     <Row>
+        <Key android:codes="@integer/jp_key_turn" android:keyEdgeFlags="left" android:keyIcon="@drawable/key_jp_return"
+            android:iconPreview="@drawable/key_jp_return" android:isModifier="true"/>
+        <Key android:codes="300,301,302,303,304" android:keyLabel="@string/hira_key_1_1"/>
+        <Key android:codes="305,306,307,308,309" android:keyLabel="@string/hira_key_1_2"/>
+        <Key android:codes="310,311,312,313,314" android:keyLabel="@string/hira_key_1_3"/>
+        <Key android:codes="@integer/key_back" android:keyEdgeFlags="right" android:isRepeatable="true" 
+            android:keyIcon="@drawable/key_delete_n"
+            android:isModifier="true"/>
+    </Row>
+    <Row>
+        <Key android:codes="@integer/key_global" android:keyEdgeFlags="left" android:keyIcon="@drawable/key_ch_etc_n"
+            android:iconPreview="@drawable/key_ch_etc_n" android:isModifier="true"/>
+        <Key android:codes="315,316,317,318,319" android:keyLabel="@string/hira_key_2_1"/>
+        <Key android:codes="320,321,322,323,324" android:keyLabel="@string/hira_key_2_2"/>
+        <Key android:codes="325,326,327,328,329" android:keyLabel="@string/hira_key_2_3"/>
+        <Key android:codes="@integer/key_blank" android:keyEdgeFlags="right" android:keyLabel=" "/>
+    </Row>
+    <Row>
+        <Key android:codes="@integer/jp_key_global" android:keyEdgeFlags="left" android:keyIcon="@drawable/key_jp_caps_1" 
+            android:iconPreview="@drawable/key_jp_caps_1" android:isModifier="true"/>
+        <Key android:codes="330,331,332,333,334" android:keyLabel="@string/hira_key_3_1"/>
+        <Key android:codes="335,336,337" 		 android:keyLabel="@string/hira_key_3_2"/>
+        <Key android:codes="338,339,340,341,342" android:keyLabel="@string/hira_key_3_3"/>
+        <Key android:codes="@integer/jp_key_space" android:keyEdgeFlags="right" android:keyIcon="@drawable/key_spacebar_2_n" 
+            android:iconPreview="@drawable/key_spacebar_2_n" android:isModifier="true"/>
+    </Row>
+    <Row>
+        <Key android:codes="@integer/key_hide" android:keyEdgeFlags="left" android:keyIcon="@drawable/key_keyboard_close_n" 
+             android:iconPreview="@drawable/key_keyboard_close_n" android:isModifier="true"/>
+        <Key android:codes="@integer/jp_key_big_small" android:keyIcon="@drawable/key_jp_a_10" 
+            android:iconPreview="@drawable/key_jp_a_10" android:isModifier="true"/>
+        <Key android:codes="343,344,345,346" android:keyLabel="@string/hira_key_4_2" />
+        <Key android:codes="205,206,207,208" android:keyIcon="@drawable/key_jp_a_12"
+            android:iconPreview="@drawable/key_jp_a_12" android:isModifier="true"/>
+        <Key android:codes="@integer/key_enter" android:keyEdgeFlags="right" android:keyIcon="@drawable/key_enter_bg_n" 
+            android:iconPreview="@drawable/key_enter_bg_n" android:isModifier="true"/>
+    </Row>
+    
+</Keyboard>
+    

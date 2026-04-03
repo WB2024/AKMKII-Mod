@@ -1,0 +1,1294 @@
+
+board_ak_dock.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+int ak_dock_power_state(void)
+{
+	//printk("ak_dock_get_device:%d\n",now_device_id);
+	return dock_power_state;
+}
+00000000 <ak_dock_power_state> ldr	r3, [pc, #4]	; 0000000c <ak_dock_power_state+0xc>
+00000004 <ak_dock_power_state+0x4> ldr	r0, [r3]
+00000008 <ak_dock_power_state+0x8> bx	lr
+0000000c <ak_dock_power_state+0xc> .word	0x00000000
+}
+
+static void ak_dock_selec(unsigned int selected)
+{
+
+}
+00000010 <ak_dock_selec> bx	lr
+static void ak_dock_convert(unsigned int d0, unsigned int d1)
+{
+
+}
+00000014 <ak_dock_convert> bx	lr
+	printk("%s\n",__FUNCTION__);		
+}
+
+static void ak_dock_late_resume(struct early_suspend *h)
+{	
+	printk("%s\n",__FUNCTION__);		
+00000018 <ak_dock_late_resume> ldr	r0, [pc, #4]	; 00000024 <ak_dock_late_resume+0xc>
+0000001c <ak_dock_late_resume+0x4> ldr	r1, [pc, #4]	; 00000028 <ak_dock_late_resume+0x10>
+00000020 <ak_dock_late_resume+0x8> b	00000000 <printk>
+00000024 <ak_dock_late_resume+0xc> .word	0x00000000
+00000028 <ak_dock_late_resume+0x10> .word	0x00000020
+
+}
+
+static void ak_dock_early_suspend(struct early_suspend *h)
+{	
+	printk("%s\n",__FUNCTION__);		
+0000002c <ak_dock_early_suspend> ldr	r0, [pc, #4]	; 00000038 <ak_dock_early_suspend+0xc>
+00000030 <ak_dock_early_suspend+0x4> ldr	r1, [pc, #4]	; 0000003c <ak_dock_early_suspend+0x10>
+00000034 <ak_dock_early_suspend+0x8> b	00000000 <printk>
+00000038 <ak_dock_early_suspend+0xc> .word	0x00000000
+0000003c <ak_dock_early_suspend+0x10> .word	0x00000034
+
+
+static void ak_dock_led_control(int val)
+{
+	//printk("%s %d\n",__FUNCTION__,val);
+	now_led_status = val;
+00000040 <ak_dock_led_control> ldr	r3, [pc, #136]	; 000000d0 <ak_dock_led_control+0x90>
+}
+EXPORT_SYMBOL(ak_dock_power_state);
+
+
+static void ak_dock_led_control(int val)
+{
+00000044 <ak_dock_led_control+0x4> push	{r4, lr}
+00000048 <ak_dock_led_control+0x8> mov	r4, r0
+	//printk("%s %d\n",__FUNCTION__,val);
+	now_led_status = val;
+0000004c <ak_dock_led_control+0xc> str	r0, [r3, #120]	; 0x78
+	if( now_led_status != old_led_status){
+00000050 <ak_dock_led_control+0x10> ldr	r3, [r3, #124]	; 0x7c
+00000054 <ak_dock_led_control+0x14> cmp	r0, r3
+00000058 <ak_dock_led_control+0x18> popeq	{r4, pc}
+		if(val==LED_OFF){ //off
+0000005c <ak_dock_led_control+0x1c> cmp	r0, #0
+00000060 <ak_dock_led_control+0x20> bne	00000088 <ak_dock_led_control+0x48>
+			printk("DOCK  LED_OFF\n");
+00000064 <ak_dock_led_control+0x24> ldr	r0, [pc, #104]	; 000000d4 <ak_dock_led_control+0x94>
+00000068 <ak_dock_led_control+0x28> bl	00000000 <printk>
+			gpio_set_value(EXT_GPIO_P13,0); //LED_R
+0000006c <ak_dock_led_control+0x2c> mov	r1, r4
+00000070 <ak_dock_led_control+0x30> movw	r0, #443	; 0x1bb
+00000074 <ak_dock_led_control+0x34> bl	00000000 <__gpio_set_value>
+			gpio_set_value(EXT_GPIO_P14,0); //LED_B
+00000078 <ak_dock_led_control+0x38> mov	r0, #444	; 0x1bc
+0000007c <ak_dock_led_control+0x3c> mov	r1, r4
+00000080 <ak_dock_led_control+0x40> bl	00000000 <__gpio_set_value>
+00000084 <ak_dock_led_control+0x44> b	000000b0 <ak_dock_led_control+0x70>
+			
+		}else if (val == LED_ON){ //on		
+00000088 <ak_dock_led_control+0x48> cmp	r0, #1
+			printk("DOCK  LED_ON\n");
+0000008c <ak_dock_led_control+0x4c> ldreq	r0, [pc, #68]	; 000000d8 <ak_dock_led_control+0x98>
+		if(val==LED_OFF){ //off
+			printk("DOCK  LED_OFF\n");
+			gpio_set_value(EXT_GPIO_P13,0); //LED_R
+			gpio_set_value(EXT_GPIO_P14,0); //LED_B
+			
+		}else if (val == LED_ON){ //on		
+00000090 <ak_dock_led_control+0x50> beq	000000ac <ak_dock_led_control+0x6c>
+			printk("DOCK  LED_ON\n");
+			//gpio_set_value(EXT_GPIO_P13,0); //LED_R
+			//gpio_set_value(EXT_GPIO_P14,1); //LED_B
+			
+		}else if (val == LED_CHARGING){ //충전 중
+00000094 <ak_dock_led_control+0x54> cmp	r4, #2
+			printk("DOCK  LED_CHARGING\n");
+00000098 <ak_dock_led_control+0x58> ldreq	r0, [pc, #60]	; 000000dc <ak_dock_led_control+0x9c>
+		}else if (val == LED_ON){ //on		
+			printk("DOCK  LED_ON\n");
+			//gpio_set_value(EXT_GPIO_P13,0); //LED_R
+			//gpio_set_value(EXT_GPIO_P14,1); //LED_B
+			
+		}else if (val == LED_CHARGING){ //충전 중
+0000009c <ak_dock_led_control+0x5c> beq	000000ac <ak_dock_led_control+0x6c>
+			printk("DOCK  LED_CHARGING\n");
+			//gpio_set_value(EXT_GPIO_P13,1); //LED_R
+			//gpio_set_value(EXT_GPIO_P14,0); //LED_B
+			
+		}else if (val == LED_LOW_BAT){ // Low battery
+000000a0 <ak_dock_led_control+0x60> cmp	r4, #3
+000000a4 <ak_dock_led_control+0x64> bne	000000b0 <ak_dock_led_control+0x70>
+			printk("DOCK  LED_LOW_BAT\n");
+000000a8 <ak_dock_led_control+0x68> ldr	r0, [pc, #48]	; 000000e0 <ak_dock_led_control+0xa0>
+000000ac <ak_dock_led_control+0x6c> bl	00000000 <printk>
+			//gpio_set_value(EXT_GPIO_P13,1); //LED_R
+			//gpio_set_value(EXT_GPIO_P14,1); //LED_B
+		}
+		
+		old_led_status = now_led_status;
+000000b0 <ak_dock_led_control+0x70> ldr	r2, [pc, #24]	; 000000d0 <ak_dock_led_control+0x90>
+		printk("DOCK  id:%d pwr:%d led:%d\n", now_device_id, dock_power_state, now_led_status);
+000000b4 <ak_dock_led_control+0x74> ldr	r0, [pc, #40]	; 000000e4 <ak_dock_led_control+0xa4>
+			printk("DOCK  LED_LOW_BAT\n");
+			//gpio_set_value(EXT_GPIO_P13,1); //LED_R
+			//gpio_set_value(EXT_GPIO_P14,1); //LED_B
+		}
+		
+		old_led_status = now_led_status;
+000000b8 <ak_dock_led_control+0x78> ldr	r3, [r2, #120]	; 0x78
+		printk("DOCK  id:%d pwr:%d led:%d\n", now_device_id, dock_power_state, now_led_status);
+000000bc <ak_dock_led_control+0x7c> ldr	r1, [r2, #128]	; 0x80
+			printk("DOCK  LED_LOW_BAT\n");
+			//gpio_set_value(EXT_GPIO_P13,1); //LED_R
+			//gpio_set_value(EXT_GPIO_P14,1); //LED_B
+		}
+		
+		old_led_status = now_led_status;
+000000c0 <ak_dock_led_control+0x80> str	r3, [r2, #124]	; 0x7c
+		printk("DOCK  id:%d pwr:%d led:%d\n", now_device_id, dock_power_state, now_led_status);
+000000c4 <ak_dock_led_control+0x84> ldr	r2, [r2]
+	}
+}
+000000c8 <ak_dock_led_control+0x88> pop	{r4, lr}
+			//gpio_set_value(EXT_GPIO_P13,1); //LED_R
+			//gpio_set_value(EXT_GPIO_P14,1); //LED_B
+		}
+		
+		old_led_status = now_led_status;
+		printk("DOCK  id:%d pwr:%d led:%d\n", now_device_id, dock_power_state, now_led_status);
+000000cc <ak_dock_led_control+0x8c> b	00000000 <printk>
+000000d0 <ak_dock_led_control+0x90> .word	0x00000000
+000000d4 <ak_dock_led_control+0x94> .word	0x0000006a
+000000d8 <ak_dock_led_control+0x98> .word	0x00000079
+000000dc <ak_dock_led_control+0x9c> .word	0x00000087
+000000e0 <ak_dock_led_control+0xa0> .word	0x0000009b
+000000e4 <ak_dock_led_control+0xa4> .word	0x000000ae
+EXPORT_SYMBOL(ak_ext_dock_control);
+
+//check doc state
+spinlock_t ak_dock_lock;
+static void ak_dock_ctl_work(struct work_struct *work)
+{
+000000e8 <ak_dock_ctl_work> push	{r3, r4, r5, lr}
+	int detect_device;
+
+	//spin_lock(&ak_dock_lock);
+	//printk("%s\n",__FUNCTION__);		
+	if(get_boot_complete()){
+000000ec <ak_dock_ctl_work+0x4> bl	00000000 <get_boot_complete>
+000000f0 <ak_dock_ctl_work+0x8> cmp	r0, #0
+000000f4 <ak_dock_ctl_work+0xc> beq	000001a0 <ak_dock_ctl_work+0xb8>
+{
+	int ret=0;
+
+	//gpio_request(GPIO_AMP_DET,"GPIO_AMP_DET");	
+
+	ret = !gpio_get_value(GPIO_AMP_DET);
+000000f8 <ak_dock_ctl_work+0x10> mov	r0, #71	; 0x47
+000000fc <ak_dock_ctl_work+0x14> ldr	r5, [pc, #180]	; 000001b8 <ak_dock_ctl_work+0xd0>
+00000100 <ak_dock_ctl_work+0x18> bl	00000000 <__gpio_get_value>
+	//printk("%s\n",__FUNCTION__);		
+	if(get_boot_complete()){
+		detect_device = ak_dock_check_device();
+		now_device_id = detect_device;
+
+		if(fake_ext_audio) // fake_ext_audio 값 이 설정 될경우 detect_device 무시하고 fake_ext_audio 값으로 설정 
+00000104 <ak_dock_ctl_work+0x1c> ldr	r2, [pc, #176]	; 000001bc <ak_dock_ctl_work+0xd4>
+
+	//spin_lock(&ak_dock_lock);
+	//printk("%s\n",__FUNCTION__);		
+	if(get_boot_complete()){
+		detect_device = ak_dock_check_device();
+		now_device_id = detect_device;
+00000108 <ak_dock_ctl_work+0x20> ldr	r3, [pc, #168]	; 000001b8 <ak_dock_ctl_work+0xd0>
+
+		if(fake_ext_audio) // fake_ext_audio 값 이 설정 될경우 detect_device 무시하고 fake_ext_audio 값으로 설정 
+0000010c <ak_dock_ctl_work+0x24> ldr	r2, [r2]
+	//gpio_request(GPIO_AMP_DET,"GPIO_AMP_DET");	
+
+	ret = !gpio_get_value(GPIO_AMP_DET);
+
+	if(ret == 1)
+		ret = DEVICE_AMP;
+00000110 <ak_dock_ctl_work+0x28> rsbs	r0, r0, #1
+00000114 <ak_dock_ctl_work+0x2c> movcc	r0, #0
+	//printk("%s\n",__FUNCTION__);		
+	if(get_boot_complete()){
+		detect_device = ak_dock_check_device();
+		now_device_id = detect_device;
+
+		if(fake_ext_audio) // fake_ext_audio 값 이 설정 될경우 detect_device 무시하고 fake_ext_audio 값으로 설정 
+00000118 <ak_dock_ctl_work+0x30> cmp	r2, #0
+
+	//spin_lock(&ak_dock_lock);
+	//printk("%s\n",__FUNCTION__);		
+	if(get_boot_complete()){
+		detect_device = ak_dock_check_device();
+		now_device_id = detect_device;
+0000011c <ak_dock_ctl_work+0x34> str	r0, [r3, #128]	; 0x80
+	}
+}
+
+static int is_charging(void)
+{    
+    return !gpio_get_value(GPIO_CHG_DET);
+00000120 <ak_dock_ctl_work+0x38> mov	r0, #211	; 0xd3
+	if(get_boot_complete()){
+		detect_device = ak_dock_check_device();
+		now_device_id = detect_device;
+
+		if(fake_ext_audio) // fake_ext_audio 값 이 설정 될경우 detect_device 무시하고 fake_ext_audio 값으로 설정 
+			now_device_id = fake_ext_audio;
+00000124 <ak_dock_ctl_work+0x3c> strne	r2, [r3, #128]	; 0x80
+	}
+}
+
+static int is_charging(void)
+{    
+    return !gpio_get_value(GPIO_CHG_DET);
+00000128 <ak_dock_ctl_work+0x40> bl	00000000 <__gpio_get_value>
+	return gpio_get_value(EXT_GPIO_P05);
+}
+
+static void display_led(void)
+{
+	if(is_charging()){
+0000012c <ak_dock_ctl_work+0x44> cmp	r0, #0
+		ak_dock_led_control(LED_CHARGING);
+00000130 <ak_dock_ctl_work+0x48> moveq	r0, #2
+	return gpio_get_value(EXT_GPIO_P05);
+}
+
+static void display_led(void)
+{
+	if(is_charging()){
+00000134 <ak_dock_ctl_work+0x4c> beq	00000154 <ak_dock_ctl_work+0x6c>
+		ak_dock_led_control(LED_CHARGING);
+	}
+	else{
+		if(get_ext_battery_level() < AK_DOCK_LOW_BAT)
+00000138 <ak_dock_ctl_work+0x50> bl	00000000 <get_ext_battery_level>
+0000013c <ak_dock_ctl_work+0x54> cmp	r0, #1
+			ak_dock_led_control(LED_LOW_BAT);
+00000140 <ak_dock_ctl_work+0x58> movle	r0, #3
+{
+	if(is_charging()){
+		ak_dock_led_control(LED_CHARGING);
+	}
+	else{
+		if(get_ext_battery_level() < AK_DOCK_LOW_BAT)
+00000144 <ak_dock_ctl_work+0x5c> ble	00000154 <ak_dock_ctl_work+0x6c>
+			ak_dock_led_control(LED_LOW_BAT);
+		else{
+			if(dock_power_state)
+00000148 <ak_dock_ctl_work+0x60> ldr	r0, [r5]
+0000014c <ak_dock_ctl_work+0x64> cmp	r0, #0
+				ak_dock_led_control(LED_ON);	
+00000150 <ak_dock_ctl_work+0x68> movne	r0, #1
+			else
+				ak_dock_led_control(LED_OFF);	
+00000154 <ak_dock_ctl_work+0x6c> bl	00000040 <ak_dock_led_control>
+			now_device_id = fake_ext_audio;
+
+		display_led();
+		//printk("%s: now_device_id:%d, old_device_id:%d, fake_ext_audio:%d\n",__FUNCTION__,now_device_id, old_device_id,fake_ext_audio);		
+
+		if(now_device_id != old_device_id){
+00000158 <ak_dock_ctl_work+0x70> ldr	r1, [r5, #128]	; 0x80
+0000015c <ak_dock_ctl_work+0x74> ldr	r3, [r5, #132]	; 0x84
+00000160 <ak_dock_ctl_work+0x78> ldr	r4, [pc, #80]	; 000001b8 <ak_dock_ctl_work+0xd0>
+00000164 <ak_dock_ctl_work+0x7c> cmp	r1, r3
+00000168 <ak_dock_ctl_work+0x80> beq	000001a0 <ak_dock_ctl_work+0xb8>
+			printk("\nak_dock_id:%d\n",now_device_id);		
+0000016c <ak_dock_ctl_work+0x84> ldr	r0, [pc, #76]	; 000001c0 <ak_dock_ctl_work+0xd8>
+00000170 <ak_dock_ctl_work+0x88> bl	00000000 <printk>
+			if(now_device_id){
+00000174 <ak_dock_ctl_work+0x8c> ldr	r1, [r4, #128]	; 0x80
+00000178 <ak_dock_ctl_work+0x90> cmp	r1, #0
+				switch_set_state(&dock_dev, now_device_id); // 1s마다 어떤 dock이 연결되어 있는지 확인후 /sys/class/switch/external_dock/state 에 write한다 
+0000017c <ak_dock_ctl_work+0x94> addne	r0, r4, #24
+		display_led();
+		//printk("%s: now_device_id:%d, old_device_id:%d, fake_ext_audio:%d\n",__FUNCTION__,now_device_id, old_device_id,fake_ext_audio);		
+
+		if(now_device_id != old_device_id){
+			printk("\nak_dock_id:%d\n",now_device_id);		
+			if(now_device_id){
+00000180 <ak_dock_ctl_work+0x98> bne	00000190 <ak_dock_ctl_work+0xa8>
+				switch_set_state(&dock_dev, now_device_id); // 1s마다 어떤 dock이 연결되어 있는지 확인후 /sys/class/switch/external_dock/state 에 write한다 
+			}else{ //No device
+				now_device_id = 0;
+				stop_ext_battery();	// dock이 연결되어 있는지 않으면 뱃터리체크 중단
+00000184 <ak_dock_ctl_work+0x9c> bl	00000000 <stop_ext_battery>
+				switch_set_state(&dock_dev, now_device_id); // dock이 연결되어 있는지 않으면 /sys/class/switch/external_dock/state 0 write
+00000188 <ak_dock_ctl_work+0xa0> ldr	r1, [r4, #128]	; 0x80
+0000018c <ak_dock_ctl_work+0xa4> add	r0, r4, #24
+00000190 <ak_dock_ctl_work+0xa8> bl	00000000 <switch_set_state>
+			}			
+			old_device_id = now_device_id;
+00000194 <ak_dock_ctl_work+0xac> ldr	r3, [pc, #28]	; 000001b8 <ak_dock_ctl_work+0xd0>
+00000198 <ak_dock_ctl_work+0xb0> ldr	r2, [r3, #128]	; 0x80
+0000019c <ak_dock_ctl_work+0xb4> str	r2, [r3, #132]	; 0x84
+		}
+	}	
+
+	//spin_unlock(&ak_dock_lock);
+	
+	schedule_delayed_work(&ak_dock_work, AK_DOCK_CONNECT_TIMER);
+000001a0 <ak_dock_ctl_work+0xb8> mov	r0, #1000	; 0x3e8
+000001a4 <ak_dock_ctl_work+0xbc> bl	00000000 <msecs_to_jiffies>
+000001a8 <ak_dock_ctl_work+0xc0> mov	r1, r0
+000001ac <ak_dock_ctl_work+0xc4> ldr	r0, [pc, #16]	; 000001c4 <ak_dock_ctl_work+0xdc>
+
+}
+000001b0 <ak_dock_ctl_work+0xc8> pop	{r3, r4, r5, lr}
+		}
+	}	
+
+	//spin_unlock(&ak_dock_lock);
+	
+	schedule_delayed_work(&ak_dock_work, AK_DOCK_CONNECT_TIMER);
+000001b4 <ak_dock_ctl_work+0xcc> b	00000000 <schedule_delayed_work>
+	...
+000001c0 <ak_dock_ctl_work+0xd8> .word	0x000000c9
+000001c4 <ak_dock_ctl_work+0xdc> .word	0x00000034
+		}
+	}
+}
+
+void ak_dock_power(int ctl)
+{
+000001c8 <ak_dock_power> push	{r4, lr}
+000001cc <ak_dock_power+0x4> mov	r4, r0
+	gpio_request(GPIO_AMP_ACC_EN	,"GPIO_AMP_ACC_EN");
+000001d0 <ak_dock_power+0x8> ldr	r1, [pc, #72]	; 00000220 <ak_dock_power+0x58>
+000001d4 <ak_dock_power+0xc> mov	r0, #73	; 0x49
+000001d8 <ak_dock_power+0x10> bl	00000000 <gpio_request>
+	gpio_request(GPIO_DOCK_I2C_EN	,"GPIO_DOCK_I2C_EN");
+000001dc <ak_dock_power+0x14> mov	r0, #82	; 0x52
+000001e0 <ak_dock_power+0x18> ldr	r1, [pc, #60]	; 00000224 <ak_dock_power+0x5c>
+000001e4 <ak_dock_power+0x1c> bl	00000000 <gpio_request>
+	
+	if(ctl){
+000001e8 <ak_dock_power+0x20> cmp	r4, #0
+		gpio_set_value(GPIO_AMP_ACC_EN,1);
+000001ec <ak_dock_power+0x24> mov	r0, #73	; 0x49
+void ak_dock_power(int ctl)
+{
+	gpio_request(GPIO_AMP_ACC_EN	,"GPIO_AMP_ACC_EN");
+	gpio_request(GPIO_DOCK_I2C_EN	,"GPIO_DOCK_I2C_EN");
+	
+	if(ctl){
+000001f0 <ak_dock_power+0x28> beq	00000208 <ak_dock_power+0x40>
+		gpio_set_value(GPIO_AMP_ACC_EN,1);
+000001f4 <ak_dock_power+0x2c> mov	r1, #1
+000001f8 <ak_dock_power+0x30> bl	00000000 <__gpio_set_value>
+		gpio_set_value(GPIO_DOCK_I2C_EN,0); //Low active
+000001fc <ak_dock_power+0x34> mov	r0, #82	; 0x52
+00000200 <ak_dock_power+0x38> mov	r1, #0
+00000204 <ak_dock_power+0x3c> b	00000218 <ak_dock_power+0x50>
+	}
+	else{
+		gpio_set_value(GPIO_AMP_ACC_EN,0);
+00000208 <ak_dock_power+0x40> mov	r1, r4
+0000020c <ak_dock_power+0x44> bl	00000000 <__gpio_set_value>
+		gpio_set_value(GPIO_DOCK_I2C_EN,1);
+00000210 <ak_dock_power+0x48> mov	r0, #82	; 0x52
+00000214 <ak_dock_power+0x4c> mov	r1, #1
+	}
+}
+00000218 <ak_dock_power+0x50> pop	{r4, lr}
+		gpio_set_value(GPIO_AMP_ACC_EN,1);
+		gpio_set_value(GPIO_DOCK_I2C_EN,0); //Low active
+	}
+	else{
+		gpio_set_value(GPIO_AMP_ACC_EN,0);
+		gpio_set_value(GPIO_DOCK_I2C_EN,1);
+0000021c <ak_dock_power+0x54> b	00000000 <__gpio_set_value>
+00000220 <ak_dock_power+0x58> .word	0x00000012
+00000224 <ak_dock_power+0x5c> .word	0x0000004c
+	}
+}
+
+void start_amp(void)
+{
+00000228 <start_amp> push	{r3, lr}
+	printk("start_amp\n");
+0000022c <start_amp+0x4> ldr	r0, [pc, #580]	; 00000478 <start_amp+0x250>
+00000230 <start_amp+0x8> bl	00000000 <printk>
+	gpio_set_value(GPIO_CPU_I2S_EN,1);
+
+	mdelay(500);
+#endif	
+#if 1
+	if(ak_is_connected_optical_tx()){ 
+00000234 <start_amp+0xc> bl	00000000 <ak_is_connected_optical_tx>
+00000238 <start_amp+0x10> cmp	r0, #0
+0000023c <start_amp+0x14> beq	00000290 <start_amp+0x68>
+		printk("start_amp detect_optical\n");
+00000240 <start_amp+0x18> ldr	r0, [pc, #564]	; 0000047c <start_amp+0x254>
+00000244 <start_amp+0x1c> bl	00000000 <printk>
+
+
+		//gpio_set_value(GPIO_OP_TX_PWEN,0);
+
+		gpio_request(GPIO_PLAY_EN,"GPIO_PLAY_EN");
+00000248 <start_amp+0x20> ldr	r1, [pc, #560]	; 00000480 <start_amp+0x258>
+0000024c <start_amp+0x24> mov	r0, #166	; 0xa6
+00000250 <start_amp+0x28> bl	00000000 <gpio_request>
+		gpio_set_value(GPIO_PLAY_EN,0);
+00000254 <start_amp+0x2c> mov	r0, #166	; 0xa6
+00000258 <start_amp+0x30> mov	r1, #0
+0000025c <start_amp+0x34> bl	00000000 <__gpio_set_value>
+
+		gpio_request(GPIO_OPTIC_PLAY_EN,"GPIO_OPTIC_PLAY_EN");
+00000260 <start_amp+0x38> ldr	r1, [pc, #540]	; 00000484 <start_amp+0x25c>
+00000264 <start_amp+0x3c> mov	r0, #168	; 0xa8
+00000268 <start_amp+0x40> bl	00000000 <gpio_request>
+		gpio_set_value(GPIO_OPTIC_PLAY_EN,1);
+0000026c <start_amp+0x44> mov	r0, #168	; 0xa8
+00000270 <start_amp+0x48> mov	r1, #1
+00000274 <start_amp+0x4c> bl	00000000 <__gpio_set_value>
+		
+		gpio_request(GPIO_OPTIC_TX_EN,"GPIO_OPTIC_TX_EN");
+00000278 <start_amp+0x50> ldr	r1, [pc, #520]	; 00000488 <start_amp+0x260>
+0000027c <start_amp+0x54> mov	r0, #167	; 0xa7
+00000280 <start_amp+0x58> bl	00000000 <gpio_request>
+		gpio_set_value(GPIO_OPTIC_TX_EN,1);
+00000284 <start_amp+0x5c> mov	r0, #167	; 0xa7
+00000288 <start_amp+0x60> mov	r1, #1
+0000028c <start_amp+0x64> bl	00000000 <__gpio_set_value>
+	}
+#endif
+
+	
+	gpio_request(EXT_GPIO_P00,"EXT_GPIO_P00");	 //CHG_DET
+00000290 <start_amp+0x68> ldr	r1, [pc, #500]	; 0000048c <start_amp+0x264>
+00000294 <start_amp+0x6c> mov	r0, #432	; 0x1b0
+00000298 <start_amp+0x70> bl	00000000 <gpio_request>
+	gpio_direction_input(EXT_GPIO_P00);	
+0000029c <start_amp+0x74> mov	r0, #432	; 0x1b0
+000002a0 <start_amp+0x78> bl	00000000 <gpio_direction_input>
+	
+	gpio_request(EXT_GPIO_P01,"EXT_GPIO_P01");	 //OPAMP_EN
+000002a4 <start_amp+0x7c> ldr	r1, [pc, #484]	; 00000490 <start_amp+0x268>
+000002a8 <start_amp+0x80> movw	r0, #433	; 0x1b1
+000002ac <start_amp+0x84> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P01,1);	
+000002b0 <start_amp+0x88> mov	r1, #1
+000002b4 <start_amp+0x8c> movw	r0, #433	; 0x1b1
+000002b8 <start_amp+0x90> bl	00000000 <gpio_direction_output>
+	//gpio_set_value(EXT_GPIO_P01,1);	
+	
+	gpio_request(EXT_GPIO_P02,"EXT_GPIO_P02");	 //VOL_CTL_EN
+000002bc <start_amp+0x94> ldr	r1, [pc, #464]	; 00000494 <start_amp+0x26c>
+000002c0 <start_amp+0x98> movw	r0, #434	; 0x1b2
+000002c4 <start_amp+0x9c> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P02,1);	
+000002c8 <start_amp+0xa0> mov	r1, #1
+000002cc <start_amp+0xa4> movw	r0, #434	; 0x1b2
+000002d0 <start_amp+0xa8> bl	00000000 <gpio_direction_output>
+	//gpio_set_value(EXT_GPIO_P02,1);	
+
+	gpio_request(EXT_GPIO_P03,"EXT_GPIO_P03");	 //BAL_MUTE#
+000002d4 <start_amp+0xac> ldr	r1, [pc, #444]	; 00000498 <start_amp+0x270>
+000002d8 <start_amp+0xb0> movw	r0, #435	; 0x1b3
+000002dc <start_amp+0xb4> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P03,1);	
+000002e0 <start_amp+0xb8> mov	r1, #1
+000002e4 <start_amp+0xbc> movw	r0, #435	; 0x1b3
+000002e8 <start_amp+0xc0> bl	00000000 <gpio_direction_output>
+	//gpio_set_value(EXT_GPIO_P03,1);	
+
+	gpio_request(EXT_GPIO_P04,"EXT_GPIO_P04");	 //UNBAL_MUTE#
+000002ec <start_amp+0xc4> ldr	r1, [pc, #424]	; 0000049c <start_amp+0x274>
+000002f0 <start_amp+0xc8> mov	r0, #436	; 0x1b4
+000002f4 <start_amp+0xcc> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P04,1);	//Active 
+000002f8 <start_amp+0xd0> mov	r1, #1
+000002fc <start_amp+0xd4> mov	r0, #436	; 0x1b4
+00000300 <start_amp+0xd8> bl	00000000 <gpio_direction_output>
+	gpio_set_value(EXT_GPIO_P04,1);	
+00000304 <start_amp+0xdc> mov	r0, #436	; 0x1b4
+00000308 <start_amp+0xe0> mov	r1, #1
+0000030c <start_amp+0xe4> bl	00000000 <__gpio_set_value>
+	
+	//gpio_request(EXT_GPIO_P05,"EXT_GPIO_P05");	 //BAL_DET
+	//gpio_direction_input(EXT_GPIO_P05);	
+
+	gpio_request(EXT_GPIO_P06,"EXT_GPIO_P06");	 //UNBAL_DET
+00000310 <start_amp+0xe8> ldr	r1, [pc, #392]	; 000004a0 <start_amp+0x278>
+00000314 <start_amp+0xec> movw	r0, #438	; 0x1b6
+00000318 <start_amp+0xf0> bl	00000000 <gpio_request>
+	gpio_direction_input(EXT_GPIO_P06);
+0000031c <start_amp+0xf4> movw	r0, #438	; 0x1b6
+00000320 <start_amp+0xf8> bl	00000000 <gpio_direction_input>
+
+	gpio_request(EXT_GPIO_P07,"EXT_GPIO_P07");	 //VOL_CTL_RST-CS3318
+00000324 <start_amp+0xfc> ldr	r1, [pc, #376]	; 000004a4 <start_amp+0x27c>
+00000328 <start_amp+0x100> movw	r0, #439	; 0x1b7
+0000032c <start_amp+0x104> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P07,1);	
+00000330 <start_amp+0x108> mov	r1, #1
+00000334 <start_amp+0x10c> movw	r0, #439	; 0x1b7
+00000338 <start_amp+0x110> bl	00000000 <gpio_direction_output>
+	//gpio_set_value(EXT_GPIO_P07,1);	
+
+	gpio_request(EXT_GPIO_P10,"EXT_GPIO_P10");	 //VOL_CTL_MUTE-CS3318
+0000033c <start_amp+0x114> ldr	r1, [pc, #356]	; 000004a8 <start_amp+0x280>
+00000340 <start_amp+0x118> mov	r0, #440	; 0x1b8
+00000344 <start_amp+0x11c> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P10,0);	
+00000348 <start_amp+0x120> mov	r1, #0
+0000034c <start_amp+0x124> mov	r0, #440	; 0x1b8
+00000350 <start_amp+0x128> bl	00000000 <gpio_direction_output>
+	//gpio_set_value(EXT_GPIO_P10,0);	
+
+	gpio_request(EXT_GPIO_P11,"EXT_GPIO_P11");	 //UNBAL_AMP_EN
+00000354 <start_amp+0x12c> ldr	r1, [pc, #336]	; 000004ac <start_amp+0x284>
+00000358 <start_amp+0x130> movw	r0, #441	; 0x1b9
+0000035c <start_amp+0x134> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P11,1);	
+00000360 <start_amp+0x138> mov	r1, #1
+00000364 <start_amp+0x13c> movw	r0, #441	; 0x1b9
+00000368 <start_amp+0x140> bl	00000000 <gpio_direction_output>
+	//gpio_set_value(EXT_GPIO_P11,1);	
+
+	gpio_request(EXT_GPIO_P12,"EXT_GPIO_P12");	 //UNBAL_AMP_EN
+0000036c <start_amp+0x144> ldr	r1, [pc, #316]	; 000004b0 <start_amp+0x288>
+00000370 <start_amp+0x148> movw	r0, #442	; 0x1ba
+00000374 <start_amp+0x14c> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P12,1);	
+00000378 <start_amp+0x150> mov	r1, #1
+0000037c <start_amp+0x154> movw	r0, #442	; 0x1ba
+00000380 <start_amp+0x158> bl	00000000 <gpio_direction_output>
+	//gpio_set_value(EXT_GPIO_P12,1);	
+	
+	gpio_request(EXT_GPIO_P13,"EXT_GPIO_P13");	 //LED_R
+00000384 <start_amp+0x15c> ldr	r1, [pc, #296]	; 000004b4 <start_amp+0x28c>
+00000388 <start_amp+0x160> movw	r0, #443	; 0x1bb
+0000038c <start_amp+0x164> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P13,0);	
+00000390 <start_amp+0x168> mov	r1, #0
+00000394 <start_amp+0x16c> movw	r0, #443	; 0x1bb
+00000398 <start_amp+0x170> bl	00000000 <gpio_direction_output>
+	//gpio_set_value(EXT_GPIO_P13,0);	
+
+	gpio_request(EXT_GPIO_P14,"EXT_GPIO_P14");	 //LED_B
+0000039c <start_amp+0x174> ldr	r1, [pc, #276]	; 000004b8 <start_amp+0x290>
+000003a0 <start_amp+0x178> mov	r0, #444	; 0x1bc
+000003a4 <start_amp+0x17c> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P14,0);	
+000003a8 <start_amp+0x180> mov	r1, #0
+000003ac <start_amp+0x184> mov	r0, #444	; 0x1bc
+000003b0 <start_amp+0x188> bl	00000000 <gpio_direction_output>
+	//gpio_set_value(EXT_GPIO_P14,0);		
+
+	gpio_request(EXT_GPIO_P15,"EXT_GPIO_P15");	 //LED_B
+000003b4 <start_amp+0x18c> ldr	r1, [pc, #256]	; 000004bc <start_amp+0x294>
+000003b8 <start_amp+0x190> movw	r0, #445	; 0x1bd
+000003bc <start_amp+0x194> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P15,0);		
+000003c0 <start_amp+0x198> mov	r1, #0
+000003c4 <start_amp+0x19c> movw	r0, #445	; 0x1bd
+000003c8 <start_amp+0x1a0> bl	00000000 <gpio_direction_output>
+
+	gpio_request(EXT_GPIO_P16,"EXT_GPIO_P16");	 //LED_B
+000003cc <start_amp+0x1a4> ldr	r1, [pc, #236]	; 000004c0 <start_amp+0x298>
+000003d0 <start_amp+0x1a8> movw	r0, #446	; 0x1be
+000003d4 <start_amp+0x1ac> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P16,0);	
+000003d8 <start_amp+0x1b0> mov	r1, #0
+000003dc <start_amp+0x1b4> movw	r0, #446	; 0x1be
+000003e0 <start_amp+0x1b8> bl	00000000 <gpio_direction_output>
+	
+	gpio_request(EXT_GPIO_P17,"EXT_GPIO_P16");	 //LED_B
+000003e4 <start_amp+0x1bc> ldr	r1, [pc, #212]	; 000004c0 <start_amp+0x298>
+000003e8 <start_amp+0x1c0> movw	r0, #447	; 0x1bf
+000003ec <start_amp+0x1c4> bl	00000000 <gpio_request>
+	gpio_direction_output(EXT_GPIO_P17,0);	
+000003f0 <start_amp+0x1c8> mov	r1, #0
+000003f4 <start_amp+0x1cc> movw	r0, #447	; 0x1bf
+000003f8 <start_amp+0x1d0> bl	00000000 <gpio_direction_output>
+		gpio_set_value(EXT_GPIO_P16,0);						
+		gpio_set_value(EXT_GPIO_P17,0);							
+		mdelay(100);
+	}
+#endif	
+	init_CS3318();
+000003fc <start_amp+0x1d4> bl	00000000 <init_CS3318>
+
+	gpio_request(GPIO_AMP_BAL_SEL_COM,"GPIO_AMP_BAL_SEL_COM");
+00000400 <start_amp+0x1d8> ldr	r1, [pc, #188]	; 000004c4 <start_amp+0x29c>
+00000404 <start_amp+0x1dc> mov	r0, #75	; 0x4b
+00000408 <start_amp+0x1e0> bl	00000000 <gpio_request>
+	gpio_set_value(GPIO_AMP_BAL_SEL_COM,0);
+0000040c <start_amp+0x1e4> mov	r0, #75	; 0x4b
+00000410 <start_amp+0x1e8> mov	r1, #0
+00000414 <start_amp+0x1ec> bl	00000000 <__gpio_set_value>
+
+	gpio_request(GPIO_AMP_BAL_SEL_COM,"GPIO_AMP_SW_MUTE_COM");
+00000418 <start_amp+0x1f0> ldr	r1, [pc, #168]	; 000004c8 <start_amp+0x2a0>
+0000041c <start_amp+0x1f4> mov	r0, #75	; 0x4b
+00000420 <start_amp+0x1f8> bl	00000000 <gpio_request>
+	gpio_set_value(GPIO_AMP_SW_MUTE_COM,0);		
+00000424 <start_amp+0x1fc> mov	r0, #74	; 0x4a
+00000428 <start_amp+0x200> mov	r1, #0
+0000042c <start_amp+0x204> bl	00000000 <__gpio_set_value>
+
+	gpio_request(GPIO_HP_BAL_MUTE,"GPIO_HP_BAL_MUTE");
+00000430 <start_amp+0x208> ldr	r1, [pc, #148]	; 000004cc <start_amp+0x2a4>
+00000434 <start_amp+0x20c> mov	r0, #176	; 0xb0
+00000438 <start_amp+0x210> bl	00000000 <gpio_request>
+	gpio_set_value(GPIO_HP_BAL_MUTE,1);
+0000043c <start_amp+0x214> mov	r0, #176	; 0xb0
+00000440 <start_amp+0x218> mov	r1, #1
+00000444 <start_amp+0x21c> bl	00000000 <__gpio_set_value>
+	gpio_request(GPIO_HP_MUTE,"GPIO_HP_MUTE");
+00000448 <start_amp+0x220> ldr	r1, [pc, #128]	; 000004d0 <start_amp+0x2a8>
+0000044c <start_amp+0x224> mov	r0, #170	; 0xaa
+00000450 <start_amp+0x228> bl	00000000 <gpio_request>
+	gpio_set_value(GPIO_HP_MUTE,1);
+00000454 <start_amp+0x22c> mov	r1, #1
+00000458 <start_amp+0x230> mov	r0, #170	; 0xaa
+0000045c <start_amp+0x234> bl	00000000 <__gpio_set_value>
+	msleep(100);	//AUDIO_SW_MUTE on시  이어폰에서 틱 노이즈 발생으로 인한 delay
+00000460 <start_amp+0x238> mov	r0, #100	; 0x64
+00000464 <start_amp+0x23c> bl	00000000 <msleep>
+	gpio_set_value(GPIO_AUDIO_SW_MUTE ,1);	
+00000468 <start_amp+0x240> mov	r0, #40	; 0x28
+0000046c <start_amp+0x244> mov	r1, #1
+
+}
+00000470 <start_amp+0x248> pop	{r3, lr}
+	gpio_request(GPIO_HP_BAL_MUTE,"GPIO_HP_BAL_MUTE");
+	gpio_set_value(GPIO_HP_BAL_MUTE,1);
+	gpio_request(GPIO_HP_MUTE,"GPIO_HP_MUTE");
+	gpio_set_value(GPIO_HP_MUTE,1);
+	msleep(100);	//AUDIO_SW_MUTE on시  이어폰에서 틱 노이즈 발생으로 인한 delay
+	gpio_set_value(GPIO_AUDIO_SW_MUTE ,1);	
+00000474 <start_amp+0x24c> b	00000000 <__gpio_set_value>
+00000478 <start_amp+0x250> .word	0x000000e5
+0000047c <start_amp+0x254> .word	0x000000f0
+00000480 <start_amp+0x258> .word	0x0000010a
+00000484 <start_amp+0x25c> .word	0x00000117
+00000488 <start_amp+0x260> .word	0x0000012a
+0000048c <start_amp+0x264> .word	0x0000013b
+00000490 <start_amp+0x268> .word	0x00000148
+00000494 <start_amp+0x26c> .word	0x00000155
+00000498 <start_amp+0x270> .word	0x00000162
+0000049c <start_amp+0x274> .word	0x0000016f
+000004a0 <start_amp+0x278> .word	0x0000017c
+000004a4 <start_amp+0x27c> .word	0x00000189
+000004a8 <start_amp+0x280> .word	0x00000196
+000004ac <start_amp+0x284> .word	0x000001a3
+000004b0 <start_amp+0x288> .word	0x000001b0
+000004b4 <start_amp+0x28c> .word	0x000001bd
+000004b8 <start_amp+0x290> .word	0x000001ca
+000004bc <start_amp+0x294> .word	0x000001d7
+000004c0 <start_amp+0x298> .word	0x000001e4
+000004c4 <start_amp+0x29c> .word	0x00000037
+000004c8 <start_amp+0x2a0> .word	0x00000022
+000004cc <start_amp+0x2a4> .word	0x000001f1
+000004d0 <start_amp+0x2a8> .word	0x00000202
+
+}
+void stop_amp(void)
+{
+000004d4 <stop_amp> push	{r3, lr}
+	
+	gpio_set_value(GPIO_AMP_BAL_SEL_COM,1);
+000004d8 <stop_amp+0x4> mov	r0, #75	; 0x4b
+000004dc <stop_amp+0x8> mov	r1, #1
+000004e0 <stop_amp+0xc> bl	00000000 <__gpio_set_value>
+	gpio_set_value(GPIO_AMP_SW_MUTE_COM,1);
+000004e4 <stop_amp+0x10> mov	r1, #1
+000004e8 <stop_amp+0x14> mov	r0, #74	; 0x4a
+000004ec <stop_amp+0x18> bl	00000000 <__gpio_set_value>
+
+	msleep(500);
+000004f0 <stop_amp+0x1c> mov	r0, #500	; 0x1f4
+000004f4 <stop_amp+0x20> bl	00000000 <msleep>
+	printk("stop_amp\n");
+000004f8 <stop_amp+0x24> ldr	r0, [pc, #120]	; 00000578 <stop_amp+0xa4>
+000004fc <stop_amp+0x28> bl	00000000 <printk>
+	gpio_set_value(GPIO_AUDIO_SW_MUTE ,0);
+00000500 <stop_amp+0x2c> mov	r0, #40	; 0x28
+00000504 <stop_amp+0x30> mov	r1, #0
+00000508 <stop_amp+0x34> bl	00000000 <__gpio_set_value>
+	gpio_set_value(GPIO_HP_BAL_MUTE,0);
+0000050c <stop_amp+0x38> mov	r0, #176	; 0xb0
+00000510 <stop_amp+0x3c> mov	r1, #0
+00000514 <stop_amp+0x40> bl	00000000 <__gpio_set_value>
+	gpio_set_value(GPIO_HP_MUTE,0);
+00000518 <stop_amp+0x44> mov	r0, #170	; 0xaa
+0000051c <stop_amp+0x48> mov	r1, #0
+00000520 <stop_amp+0x4c> bl	00000000 <__gpio_set_value>
+#if 1
+	if(ak_is_connected_optical_tx()){ //OPTICAL 케이블 연결되어 있을경우
+00000524 <stop_amp+0x50> bl	00000000 <ak_is_connected_optical_tx>
+00000528 <stop_amp+0x54> cmp	r0, #0
+0000052c <stop_amp+0x58> popeq	{r3, pc}
+		printk("stop_amp: detect_optical\n");
+00000530 <stop_amp+0x5c> ldr	r0, [pc, #68]	; 0000057c <stop_amp+0xa8>
+00000534 <stop_amp+0x60> bl	00000000 <printk>
+		gpio_set_value(GPIO_CPU_I2S_EN,0);
+00000538 <stop_amp+0x64> mov	r0, #8
+0000053c <stop_amp+0x68> mov	r1, #0
+00000540 <stop_amp+0x6c> bl	00000000 <__gpio_set_value>
+		gpio_set_value(GPIO_OP_TX_PWEN,1);
+00000544 <stop_amp+0x70> mov	r0, #173	; 0xad
+00000548 <stop_amp+0x74> mov	r1, #1
+0000054c <stop_amp+0x78> bl	00000000 <__gpio_set_value>
+		gpio_set_value(GPIO_PLAY_EN,1);
+00000550 <stop_amp+0x7c> mov	r0, #166	; 0xa6
+00000554 <stop_amp+0x80> mov	r1, #1
+00000558 <stop_amp+0x84> bl	00000000 <__gpio_set_value>
+		gpio_set_value(GPIO_OPTIC_PLAY_EN,1);
+0000055c <stop_amp+0x88> mov	r0, #168	; 0xa8
+00000560 <stop_amp+0x8c> mov	r1, #1
+00000564 <stop_amp+0x90> bl	00000000 <__gpio_set_value>
+		gpio_set_value(GPIO_OPTIC_TX_EN,0);		
+00000568 <stop_amp+0x94> mov	r0, #167	; 0xa7
+0000056c <stop_amp+0x98> mov	r1, #0
+	gpio_free(EXT_GPIO_P15);
+	gpio_free(EXT_GPIO_P16);
+	gpio_free(EXT_GPIO_P17);
+#endif	
+	
+}
+00000570 <stop_amp+0x9c> pop	{r3, lr}
+		printk("stop_amp: detect_optical\n");
+		gpio_set_value(GPIO_CPU_I2S_EN,0);
+		gpio_set_value(GPIO_OP_TX_PWEN,1);
+		gpio_set_value(GPIO_PLAY_EN,1);
+		gpio_set_value(GPIO_OPTIC_PLAY_EN,1);
+		gpio_set_value(GPIO_OPTIC_TX_EN,0);		
+00000574 <stop_amp+0xa0> b	00000000 <__gpio_set_value>
+00000578 <stop_amp+0xa4> .word	0x0000020f
+0000057c <stop_amp+0xa8> .word	0x00000219
+
+//ir_ioctl_cmd.c에서 호출
+void ak_ext_dock_control(int pwr_ctl)
+{
+	//mutex_lock(&dock_lock);
+	if(pwr_ctl == POWER_ON){
+00000580 <ak_ext_dock_control> cmp	r0, #1
+	
+}
+
+//ir_ioctl_cmd.c에서 호출
+void ak_ext_dock_control(int pwr_ctl)
+{
+00000584 <ak_ext_dock_control+0x4> push	{r3, r4, r5, lr}
+	//mutex_lock(&dock_lock);
+	if(pwr_ctl == POWER_ON){
+00000588 <ak_ext_dock_control+0x8> bne	000005e4 <ak_ext_dock_control+0x64>
+		ak_dock_power(POWER_ON);
+
+		start_ext_battery(); //Dock 뱃터리 최기화 및 1초 단위 체크 시작
+		
+		// sys/class/switch/external_dock/state 
+		if(now_device_id==DEVICE_AMP){ //AMP
+0000058c <ak_ext_dock_control+0xc> ldr	r4, [pc, #200]	; 0000065c <ak_ext_dock_control+0xdc>
+//ir_ioctl_cmd.c에서 호출
+void ak_ext_dock_control(int pwr_ctl)
+{
+	//mutex_lock(&dock_lock);
+	if(pwr_ctl == POWER_ON){
+		ak_dock_power(POWER_ON);
+00000590 <ak_ext_dock_control+0x10> bl	000001c8 <ak_dock_power>
+
+		start_ext_battery(); //Dock 뱃터리 최기화 및 1초 단위 체크 시작
+00000594 <ak_ext_dock_control+0x14> bl	00000000 <start_ext_battery>
+		
+		// sys/class/switch/external_dock/state 
+		if(now_device_id==DEVICE_AMP){ //AMP
+00000598 <ak_ext_dock_control+0x18> ldr	r3, [r4, #128]	; 0x80
+0000059c <ak_ext_dock_control+0x1c> cmp	r3, #1
+000005a0 <ak_ext_dock_control+0x20> bne	000005bc <ak_ext_dock_control+0x3c>
+			printk("DEVICE_AMP ON ");
+000005a4 <ak_ext_dock_control+0x24> ldr	r0, [pc, #180]	; 00000660 <ak_ext_dock_control+0xe0>
+000005a8 <ak_ext_dock_control+0x28> bl	00000000 <printk>
+			start_amp();
+000005ac <ak_ext_dock_control+0x2c> bl	00000228 <start_amp>
+			switch_set_state(&dock_dev, DEVICE_AMP_ON);	//AMP ON		
+000005b0 <ak_ext_dock_control+0x30> add	r0, r4, #24
+000005b4 <ak_ext_dock_control+0x34> mov	r1, #3
+000005b8 <ak_ext_dock_control+0x38> bl	00000000 <switch_set_state>
+		}
+		if(now_device_id==DEVICE_RECODER){ //REC
+000005bc <ak_ext_dock_control+0x3c> ldr	r3, [r4, #128]	; 0x80
+000005c0 <ak_ext_dock_control+0x40> cmp	r3, #2
+000005c4 <ak_ext_dock_control+0x44> bne	000005d4 <ak_ext_dock_control+0x54>
+			switch_set_state(&dock_dev, DEVICE_RECODER_ON); //REC ON
+000005c8 <ak_ext_dock_control+0x48> ldr	r0, [pc, #148]	; 00000664 <ak_ext_dock_control+0xe4>
+000005cc <ak_ext_dock_control+0x4c> mov	r1, #4
+000005d0 <ak_ext_dock_control+0x50> bl	00000000 <switch_set_state>
+		}	
+		dock_power_state = POWER_ON;
+000005d4 <ak_ext_dock_control+0x54> ldr	r3, [pc, #128]	; 0000065c <ak_ext_dock_control+0xdc>
+000005d8 <ak_ext_dock_control+0x58> mov	r2, #1
+000005dc <ak_ext_dock_control+0x5c> str	r2, [r3]
+000005e0 <ak_ext_dock_control+0x60> pop	{r3, r4, r5, pc}
+	}
+	else if(pwr_ctl == POWER_OFF){
+000005e4 <ak_ext_dock_control+0x64> cmp	r0, #0
+000005e8 <ak_ext_dock_control+0x68> bne	0000063c <ak_ext_dock_control+0xbc>
+
+		stop_ext_battery(); //Dock 뱃터리 체크 중단
+		
+		if(now_device_id==DEVICE_AMP){ //AMP
+000005ec <ak_ext_dock_control+0x6c> ldr	r4, [pc, #104]	; 0000065c <ak_ext_dock_control+0xdc>
+		}	
+		dock_power_state = POWER_ON;
+	}
+	else if(pwr_ctl == POWER_OFF){
+
+		stop_ext_battery(); //Dock 뱃터리 체크 중단
+000005f0 <ak_ext_dock_control+0x70> bl	00000000 <stop_ext_battery>
+		
+		if(now_device_id==DEVICE_AMP){ //AMP
+000005f4 <ak_ext_dock_control+0x74> ldr	r5, [r4, #128]	; 0x80
+000005f8 <ak_ext_dock_control+0x78> cmp	r5, #1
+000005fc <ak_ext_dock_control+0x7c> bne	00000618 <ak_ext_dock_control+0x98>
+			printk("DEVICE_AMP OFF ");
+00000600 <ak_ext_dock_control+0x80> ldr	r0, [pc, #96]	; 00000668 <ak_ext_dock_control+0xe8>
+00000604 <ak_ext_dock_control+0x84> bl	00000000 <printk>
+			stop_amp();
+00000608 <ak_ext_dock_control+0x88> bl	000004d4 <stop_amp>
+			switch_set_state(&dock_dev, DEVICE_AMP_OFF); //AMP OFF
+0000060c <ak_ext_dock_control+0x8c> add	r0, r4, #24
+00000610 <ak_ext_dock_control+0x90> mov	r1, r5
+00000614 <ak_ext_dock_control+0x94> bl	00000000 <switch_set_state>
+		}
+		if(now_device_id==DEVICE_RECODER){ //REC
+00000618 <ak_ext_dock_control+0x98> ldr	r1, [r4, #128]	; 0x80
+0000061c <ak_ext_dock_control+0x9c> cmp	r1, #2
+00000620 <ak_ext_dock_control+0xa0> bne	0000062c <ak_ext_dock_control+0xac>
+			switch_set_state(&dock_dev, DEVICE_RECODER_OFF); //REC OFF
+00000624 <ak_ext_dock_control+0xa4> ldr	r0, [pc, #56]	; 00000664 <ak_ext_dock_control+0xe4>
+00000628 <ak_ext_dock_control+0xa8> bl	00000000 <switch_set_state>
+		}
+		dock_power_state = POWER_OFF;
+0000062c <ak_ext_dock_control+0xac> ldr	r3, [pc, #40]	; 0000065c <ak_ext_dock_control+0xdc>
+00000630 <ak_ext_dock_control+0xb0> mov	r0, #0
+00000634 <ak_ext_dock_control+0xb4> str	r0, [r3]
+00000638 <ak_ext_dock_control+0xb8> b	00000654 <ak_ext_dock_control+0xd4>
+
+		ak_dock_power(POWER_OFF);
+	}
+	else if(pwr_ctl == POWER_SLEEP)	{
+0000063c <ak_ext_dock_control+0xbc> cmp	r0, #2
+00000640 <ak_ext_dock_control+0xc0> popne	{r3, r4, r5, pc}
+		ak_dock_led_control(LED_OFF);	// LED OFF
+00000644 <ak_ext_dock_control+0xc4> mov	r0, #0
+00000648 <ak_ext_dock_control+0xc8> bl	00000040 <ak_dock_led_control>
+		stop_ext_battery(); //Dock 뱃터리 체크 중단
+0000064c <ak_ext_dock_control+0xcc> bl	00000000 <stop_ext_battery>
+		ak_dock_power(POWER_OFF); // Power off 
+00000650 <ak_ext_dock_control+0xd0> mov	r0, #0
+	}
+
+	//printk("ak_ext_dock_control(%d) now_device_id(%d)\n",pwr_ctl, now_device_id);	
+	//mutex_unlock(&dock_lock);
+	
+}
+00000654 <ak_ext_dock_control+0xd4> pop	{r3, r4, r5, lr}
+		ak_dock_power(POWER_OFF);
+	}
+	else if(pwr_ctl == POWER_SLEEP)	{
+		ak_dock_led_control(LED_OFF);	// LED OFF
+		stop_ext_battery(); //Dock 뱃터리 체크 중단
+		ak_dock_power(POWER_OFF); // Power off 
+00000658 <ak_ext_dock_control+0xd8> b	000001c8 <ak_dock_power>
+0000065c <ak_ext_dock_control+0xdc> .word	0x00000000
+00000660 <ak_ext_dock_control+0xe0> .word	0x00000233
+00000664 <ak_ext_dock_control+0xe4> .word	0x00000018
+00000668 <ak_ext_dock_control+0xe8> .word	0x00000242
+	ak_ext_dock_control(POWER_SLEEP); 
+    return 0;       
+}
+
+static int ak_dock_resume(struct platform_device *pdev)
+{  
+0000066c <ak_dock_resume> push	{r4, lr}
+	printk("%s %d\n",__FUNCTION__,dock_power_state);
+00000670 <ak_dock_resume+0x4> ldr	r4, [pc, #56]	; 000006b0 <ak_dock_resume+0x44>
+00000674 <ak_dock_resume+0x8> ldr	r0, [pc, #56]	; 000006b4 <ak_dock_resume+0x48>
+00000678 <ak_dock_resume+0xc> ldr	r1, [pc, #56]	; 000006b8 <ak_dock_resume+0x4c>
+0000067c <ak_dock_resume+0x10> ldr	r2, [r4]
+00000680 <ak_dock_resume+0x14> bl	00000000 <printk>
+
+	if(dock_power_state==POWER_ON){
+00000684 <ak_dock_resume+0x18> ldr	r0, [r4]
+00000688 <ak_dock_resume+0x1c> cmp	r0, #1
+0000068c <ak_dock_resume+0x20> bne	00000694 <ak_dock_resume+0x28>
+		ak_ext_dock_control(POWER_ON); //sleep진입전 dock의 Power가 ON되어있었으면 resume시 다시 ON시킨다
+00000690 <ak_dock_resume+0x24> bl	00000580 <ak_ext_dock_control>
+	}
+	
+	schedule_delayed_work(&ak_dock_work, AK_DOCK_CONNECT_TIMER);
+00000694 <ak_dock_resume+0x28> mov	r0, #1000	; 0x3e8
+00000698 <ak_dock_resume+0x2c> bl	00000000 <msecs_to_jiffies>
+0000069c <ak_dock_resume+0x30> mov	r1, r0
+000006a0 <ak_dock_resume+0x34> ldr	r0, [pc, #20]	; 000006bc <ak_dock_resume+0x50>
+000006a4 <ak_dock_resume+0x38> bl	00000000 <schedule_delayed_work>
+
+    return 0;  
+}
+000006a8 <ak_dock_resume+0x3c> mov	r0, #0
+000006ac <ak_dock_resume+0x40> pop	{r4, pc}
+000006b0 <ak_dock_resume+0x44> .word	0x00000000
+000006b4 <ak_dock_resume+0x48> .word	0x00000252
+000006b8 <ak_dock_resume+0x4c> .word	0x00000058
+000006bc <ak_dock_resume+0x50> .word	0x00000034
+{	
+	printk("%s\n",__FUNCTION__);		
+
+}
+static int ak_dock_suspend(struct platform_device *pdev, pm_message_t state)                                                                                                                                  
+{                   
+000006c0 <ak_dock_suspend> push	{r3, lr}
+   	printk("%s\n",__FUNCTION__);     
+000006c4 <ak_dock_suspend+0x4> ldr	r1, [pc, #48]	; 000006fc <ak_dock_suspend+0x3c>
+000006c8 <ak_dock_suspend+0x8> ldr	r0, [pc, #48]	; 00000700 <ak_dock_suspend+0x40>
+000006cc <ak_dock_suspend+0xc> bl	00000000 <printk>
+ */
+static inline bool cancel_delayed_work(struct delayed_work *work)
+{
+	bool ret;
+
+	ret = del_timer_sync(&work->timer);
+000006d0 <ak_dock_suspend+0x10> ldr	r0, [pc, #44]	; 00000704 <ak_dock_suspend+0x44>
+000006d4 <ak_dock_suspend+0x14> bl	00000000 <del_timer_sync>
+	if (ret)
+000006d8 <ak_dock_suspend+0x18> cmp	r0, #0
+000006dc <ak_dock_suspend+0x1c> beq	000006ec <ak_dock_suspend+0x2c>
+		work_clear_pending(&work->work);
+000006e0 <ak_dock_suspend+0x20> mov	r0, #0
+000006e4 <ak_dock_suspend+0x24> ldr	r1, [pc, #28]	; 00000708 <ak_dock_suspend+0x48>
+000006e8 <ak_dock_suspend+0x28> bl	00000000 <_clear_bit>
+	cancel_delayed_work(&ak_dock_work);
+	//인자로 POWER_OFF를 쓰면  dock_power_state 의 값이 POER_OFF로 되어 resuem시 bat초기화 하지 못함 
+	//POWER_SLEEP인자를 두어 dock_power_state값은 변하지 않고 stop_ext_battery(), ak_dock_power() 함수만 실행한ㄷ.
+	ak_ext_dock_control(POWER_SLEEP); 
+000006ec <ak_dock_suspend+0x2c> mov	r0, #2
+000006f0 <ak_dock_suspend+0x30> bl	00000580 <ak_ext_dock_control>
+    return 0;       
+}
+000006f4 <ak_dock_suspend+0x34> mov	r0, #0
+000006f8 <ak_dock_suspend+0x38> pop	{r3, pc}
+000006fc <ak_dock_suspend+0x3c> .word	0x00000067
+00000700 <ak_dock_suspend+0x40> .word	0x00000000
+00000704 <ak_dock_suspend+0x44> .word	0x00000044
+00000708 <ak_dock_suspend+0x48> .word	0x00000034
+
+Disassembly of section .devexit.text:
+	schedule_delayed_work(&ak_dock_work, AK_DOCK_CONNECT_TIMER);
+	return 0;
+}
+
+static __devexit int ak_dock_remove(struct platform_device *pdev)
+{
+00000000 <ak_dock_remove> .word	0xe92d4008
+	printk("%s\n",__FUNCTION__);
+00000004 <ak_dock_remove+0x4> ldr	r1, [pc, #12]	; 00000018 <ak_dock_remove+0x18>
+00000008 <ak_dock_remove+0x8> .word	0xe59f000c
+0000000c <ak_dock_remove+0xc> bl	00000000 <printk>
+	return 0;
+}
+00000010 <ak_dock_remove+0x10> mov	r0, #0
+00000014 <ak_dock_remove+0x14> pop	{r3, pc}
+	...
+
+static __devexit int ak_dock_shutdown(struct platform_device *pdev)
+{
+00000020 <ak_dock_shutdown> push	{r3, lr}
+	printk("%s\n",__FUNCTION__);
+00000024 <ak_dock_shutdown+0x4> ldr	r1, [pc, #12]	; 00000038 <ak_dock_shutdown+0x18>
+00000028 <ak_dock_shutdown+0x8> ldr	r0, [pc, #12]	; 0000003c <ak_dock_shutdown+0x1c>
+0000002c <ak_dock_shutdown+0xc> bl	00000000 <printk>
+	return 0;
+}
+00000030 <ak_dock_shutdown+0x10> mov	r0, #0
+00000034 <ak_dock_shutdown+0x14> pop	{r3, pc}
+00000038 <ak_dock_shutdown+0x18> .word	0x0000000f
+0000003c <ak_dock_shutdown+0x1c> .word	0x00000000
+
+Disassembly of section .devinit.text:
+static void ak_dock_convert(unsigned int d0, unsigned int d1)
+{
+
+}
+static __devinit int ak_dock_probe(struct platform_device *pdev)
+{
+00000000 <ak_dock_probe> push	{r3, r4, r5, lr}
+00000004 <ak_dock_probe+0x4> mov	r5, r0
+
+	printk("%s\n",__FUNCTION__);
+00000008 <ak_dock_probe+0x8> ldr	r1, [pc, #320]	; 00000150 <ak_dock_probe+0x150>
+0000000c <ak_dock_probe+0xc> ldr	r0, [pc, #320]	; 00000154 <ak_dock_probe+0x154>
+
+	dcok_early_suspend.suspend = ak_dock_early_suspend;	
+00000010 <ak_dock_probe+0x10> ldr	r4, [pc, #320]	; 00000158 <ak_dock_probe+0x158>
+
+}
+static __devinit int ak_dock_probe(struct platform_device *pdev)
+{
+
+	printk("%s\n",__FUNCTION__);
+00000014 <ak_dock_probe+0x14> bl	00000000 <printk>
+
+	dcok_early_suspend.suspend = ak_dock_early_suspend;	
+00000018 <ak_dock_probe+0x18> ldr	r3, [pc, #316]	; 0000015c <ak_dock_probe+0x15c>
+	dcok_early_suspend.resume = ak_dock_late_resume;	
+	dcok_early_suspend.level = EARLY_SUSPEND_LEVEL_BLANK_SCREEN + 2;	
+	register_early_suspend(&dcok_early_suspend);
+0000001c <ak_dock_probe+0x1c> add	r0, r4, #4
+static __devinit int ak_dock_probe(struct platform_device *pdev)
+{
+
+	printk("%s\n",__FUNCTION__);
+
+	dcok_early_suspend.suspend = ak_dock_early_suspend;	
+00000020 <ak_dock_probe+0x20> str	r3, [r4, #16]
+	dcok_early_suspend.resume = ak_dock_late_resume;	
+00000024 <ak_dock_probe+0x24> ldr	r3, [pc, #308]	; 00000160 <ak_dock_probe+0x160>
+00000028 <ak_dock_probe+0x28> str	r3, [r4, #20]
+	dcok_early_suspend.level = EARLY_SUSPEND_LEVEL_BLANK_SCREEN + 2;	
+0000002c <ak_dock_probe+0x2c> mov	r3, #52	; 0x34
+00000030 <ak_dock_probe+0x30> str	r3, [r4, #12]
+	register_early_suspend(&dcok_early_suspend);
+00000034 <ak_dock_probe+0x34> bl	00000000 <register_early_suspend>
+
+	dock_dev.name = "external_dock" ;
+00000038 <ak_dock_probe+0x38> ldr	r3, [pc, #292]	; 00000164 <ak_dock_probe+0x164>
+0000003c <ak_dock_probe+0x3c> mov	r0, r4
+00000040 <ak_dock_probe+0x40> str	r3, [r0, #24]!
+	switch_dev_register(&dock_dev);
+00000044 <ak_dock_probe+0x44> bl	00000000 <switch_dev_register>
+
+	ad_client = tcc_adc_register(pdev, ak_dock_selec, ak_dock_convert, 0);
+00000048 <ak_dock_probe+0x48> ldr	r2, [pc, #280]	; 00000168 <ak_dock_probe+0x168>
+0000004c <ak_dock_probe+0x4c> mov	r3, #0
+00000050 <ak_dock_probe+0x50> mov	r0, r5
+00000054 <ak_dock_probe+0x54> ldr	r1, [pc, #272]	; 0000016c <ak_dock_probe+0x16c>
+	
+
+	gpio_request(GPIO_AMP_DET,"GPIO_AMP_DET");	
+	gpio_direction_input(GPIO_AMP_DET);	
+	
+	INIT_DELAYED_WORK(&ak_dock_work, ak_dock_ctl_work);
+00000058 <ak_dock_probe+0x58> mov	r5, r4
+	register_early_suspend(&dcok_early_suspend);
+
+	dock_dev.name = "external_dock" ;
+	switch_dev_register(&dock_dev);
+
+	ad_client = tcc_adc_register(pdev, ak_dock_selec, ak_dock_convert, 0);
+0000005c <ak_dock_probe+0x5c> bl	00000000 <tcc_adc_register>
+	//gpio_request(EXT_GPIO_P01,"EXT_GPIO_P01");	
+	//gpio_direction_output(EXT_GPIO_P01,0);	
+	//gpio_set_value(EXT_GPIO_P01,1);	// EXT_GPIO_P01? OPAMP_EN High
+#endif
+
+	gpio_request(GPIO_AMP_ACC_EN	,"GPIO_AMP_ACC_EN");
+00000060 <ak_dock_probe+0x60> ldr	r1, [pc, #264]	; 00000170 <ak_dock_probe+0x170>
+	register_early_suspend(&dcok_early_suspend);
+
+	dock_dev.name = "external_dock" ;
+	switch_dev_register(&dock_dev);
+
+	ad_client = tcc_adc_register(pdev, ak_dock_selec, ak_dock_convert, 0);
+00000064 <ak_dock_probe+0x64> str	r0, [r4, #48]	; 0x30
+	//gpio_request(EXT_GPIO_P01,"EXT_GPIO_P01");	
+	//gpio_direction_output(EXT_GPIO_P01,0);	
+	//gpio_set_value(EXT_GPIO_P01,1);	// EXT_GPIO_P01? OPAMP_EN High
+#endif
+
+	gpio_request(GPIO_AMP_ACC_EN	,"GPIO_AMP_ACC_EN");
+00000068 <ak_dock_probe+0x68> mov	r0, #73	; 0x49
+0000006c <ak_dock_probe+0x6c> bl	00000000 <gpio_request>
+	tcc_gpio_config(GPIO_AMP_ACC_EN, GPIO_FN(0));
+00000070 <ak_dock_probe+0x70> mov	r1, #16777216	; 0x1000000
+00000074 <ak_dock_probe+0x74> mov	r0, #73	; 0x49
+00000078 <ak_dock_probe+0x78> bl	00000000 <tcc_gpio_config>
+	gpio_direction_output(GPIO_AMP_ACC_EN, 0);
+0000007c <ak_dock_probe+0x7c> mov	r1, #0
+00000080 <ak_dock_probe+0x80> mov	r0, #73	; 0x49
+00000084 <ak_dock_probe+0x84> bl	00000000 <gpio_direction_output>
+
+	gpio_request(GPIO_AMP_SW_MUTE_COM	,"GPIO_AMP_SW_MUTE_COM");
+00000088 <ak_dock_probe+0x88> ldr	r1, [pc, #228]	; 00000174 <ak_dock_probe+0x174>
+0000008c <ak_dock_probe+0x8c> mov	r0, #74	; 0x4a
+00000090 <ak_dock_probe+0x90> bl	00000000 <gpio_request>
+	tcc_gpio_config(GPIO_AMP_SW_MUTE_COM, GPIO_FN(0));
+00000094 <ak_dock_probe+0x94> mov	r1, #16777216	; 0x1000000
+00000098 <ak_dock_probe+0x98> mov	r0, #74	; 0x4a
+0000009c <ak_dock_probe+0x9c> bl	00000000 <tcc_gpio_config>
+	gpio_direction_output(GPIO_AMP_SW_MUTE_COM, 1);
+000000a0 <ak_dock_probe+0xa0> mov	r1, #1
+000000a4 <ak_dock_probe+0xa4> mov	r0, #74	; 0x4a
+000000a8 <ak_dock_probe+0xa8> bl	00000000 <gpio_direction_output>
+
+	gpio_request(GPIO_AMP_BAL_SEL_COM	,"GPIO_AMP_BAL_SEL_COM");
+000000ac <ak_dock_probe+0xac> ldr	r1, [pc, #196]	; 00000178 <ak_dock_probe+0x178>
+000000b0 <ak_dock_probe+0xb0> mov	r0, #75	; 0x4b
+000000b4 <ak_dock_probe+0xb4> bl	00000000 <gpio_request>
+	tcc_gpio_config(GPIO_AMP_BAL_SEL_COM, GPIO_FN(0));
+000000b8 <ak_dock_probe+0xb8> mov	r1, #16777216	; 0x1000000
+000000bc <ak_dock_probe+0xbc> mov	r0, #75	; 0x4b
+000000c0 <ak_dock_probe+0xc0> bl	00000000 <tcc_gpio_config>
+	gpio_direction_output(GPIO_AMP_BAL_SEL_COM, 1);
+000000c4 <ak_dock_probe+0xc4> mov	r1, #1
+000000c8 <ak_dock_probe+0xc8> mov	r0, #75	; 0x4b
+000000cc <ak_dock_probe+0xcc> bl	00000000 <gpio_direction_output>
+
+	gpio_request(GPIO_DOCK_I2C_EN	,"GPIO_DOCK_I2C_EN");
+000000d0 <ak_dock_probe+0xd0> ldr	r1, [pc, #164]	; 0000017c <ak_dock_probe+0x17c>
+000000d4 <ak_dock_probe+0xd4> mov	r0, #82	; 0x52
+000000d8 <ak_dock_probe+0xd8> bl	00000000 <gpio_request>
+	tcc_gpio_config(GPIO_DOCK_I2C_EN, GPIO_FN(0));
+000000dc <ak_dock_probe+0xdc> mov	r1, #16777216	; 0x1000000
+000000e0 <ak_dock_probe+0xe0> mov	r0, #82	; 0x52
+000000e4 <ak_dock_probe+0xe4> bl	00000000 <tcc_gpio_config>
+	gpio_direction_output(GPIO_DOCK_I2C_EN, 1); //Low active
+000000e8 <ak_dock_probe+0xe8> mov	r1, #1
+000000ec <ak_dock_probe+0xec> mov	r0, #82	; 0x52
+000000f0 <ak_dock_probe+0xf0> bl	00000000 <gpio_direction_output>
+	
+
+	gpio_request(GPIO_AMP_DET,"GPIO_AMP_DET");	
+000000f4 <ak_dock_probe+0xf4> ldr	r1, [pc, #132]	; 00000180 <ak_dock_probe+0x180>
+000000f8 <ak_dock_probe+0xf8> mov	r0, #71	; 0x47
+000000fc <ak_dock_probe+0xfc> bl	00000000 <gpio_request>
+	gpio_direction_input(GPIO_AMP_DET);	
+00000100 <ak_dock_probe+0x100> mov	r0, #71	; 0x47
+00000104 <ak_dock_probe+0x104> bl	00000000 <gpio_direction_input>
+	
+	INIT_DELAYED_WORK(&ak_dock_work, ak_dock_ctl_work);
+00000108 <ak_dock_probe+0x108> mov	r3, #768	; 0x300
+0000010c <ak_dock_probe+0x10c> str	r3, [r5, #52]!	; 0x34
+#define LIST_HEAD(name) \
+	struct list_head name = LIST_HEAD_INIT(name)
+
+static inline void INIT_LIST_HEAD(struct list_head *list)
+{
+	list->next = list;
+00000110 <ak_dock_probe+0x110> add	r3, r4, #56	; 0x38
+00000114 <ak_dock_probe+0x114> str	r3, [r4, #56]	; 0x38
+00000118 <ak_dock_probe+0x118> mov	r1, #0
+	list->prev = list;
+0000011c <ak_dock_probe+0x11c> str	r3, [r4, #60]	; 0x3c
+00000120 <ak_dock_probe+0x120> mov	r2, r1
+00000124 <ak_dock_probe+0x124> ldr	r3, [pc, #88]	; 00000184 <ak_dock_probe+0x184>
+00000128 <ak_dock_probe+0x128> add	r0, r4, #68	; 0x44
+0000012c <ak_dock_probe+0x12c> str	r3, [r4, #64]	; 0x40
+00000130 <ak_dock_probe+0x130> bl	00000000 <init_timer_key>
+	schedule_delayed_work(&ak_dock_work, AK_DOCK_CONNECT_TIMER);
+00000134 <ak_dock_probe+0x134> mov	r0, #1000	; 0x3e8
+00000138 <ak_dock_probe+0x138> bl	00000000 <msecs_to_jiffies>
+0000013c <ak_dock_probe+0x13c> mov	r1, r0
+00000140 <ak_dock_probe+0x140> mov	r0, r5
+00000144 <ak_dock_probe+0x144> bl	00000000 <schedule_delayed_work>
+	return 0;
+}
+00000148 <ak_dock_probe+0x148> mov	r0, #0
+0000014c <ak_dock_probe+0x14c> pop	{r3, r4, r5, pc}
+00000150 <ak_dock_probe+0x150> .word	0x0000004a
+	...
+00000164 <ak_dock_probe+0x164> .word	0x00000004
+	...
+00000170 <ak_dock_probe+0x170> .word	0x00000012
+00000174 <ak_dock_probe+0x174> .word	0x00000022
+00000178 <ak_dock_probe+0x178> .word	0x00000037
+0000017c <ak_dock_probe+0x17c> .word	0x0000004c
+00000180 <ak_dock_probe+0x180> .word	0x0000005d
+00000184 <ak_dock_probe+0x184> .word	0x00000000
+
+Disassembly of section .init.text:
+
+
+static struct platform_device *ak_dock_dev;
+
+int __init ak_dock_board_init(void)
+{
+00000000 <ak_dock_board_init> .word	0xe92d4038
+	int ret;
+
+	ak_dock_dev = platform_device_alloc("ak_dock_drv", -1);
+00000004 <ak_dock_board_init+0x4> mvn	r1, #0
+00000008 <ak_dock_board_init+0x8> ldr	r0, [pc, #76]	; 0000005c <ak_dock_board_init+0x5c>
+0000000c <ak_dock_board_init+0xc> bl	00000000 <platform_device_alloc>
+00000010 <ak_dock_board_init+0x10> ldr	r5, [pc, #72]	; 00000060 <ak_dock_board_init+0x60>
+	if (!ak_dock_dev)
+00000014 <ak_dock_board_init+0x14> cmp	r0, #0
+
+int __init ak_dock_board_init(void)
+{
+	int ret;
+
+	ak_dock_dev = platform_device_alloc("ak_dock_drv", -1);
+00000018 <ak_dock_board_init+0x18> str	r0, [r5, #136]	; 0x88
+	if (!ak_dock_dev)
+		return -ENOMEM;
+0000001c <ak_dock_board_init+0x1c> mvneq	r4, #11
+int __init ak_dock_board_init(void)
+{
+	int ret;
+
+	ak_dock_dev = platform_device_alloc("ak_dock_drv", -1);
+	if (!ak_dock_dev)
+00000020 <ak_dock_board_init+0x20> beq	00000054 <ak_dock_board_init+0x54>
+		return -ENOMEM;
+
+	ret = platform_device_add(ak_dock_dev);
+00000024 <ak_dock_board_init+0x24> bl	00000000 <platform_device_add>
+	if (ret != 0) {
+00000028 <ak_dock_board_init+0x28> subs	r4, r0, #0
+0000002c <ak_dock_board_init+0x2c> beq	0000003c <ak_dock_board_init+0x3c>
+		platform_device_put(ak_dock_dev);
+00000030 <ak_dock_board_init+0x30> ldr	r0, [r5, #136]	; 0x88
+00000034 <ak_dock_board_init+0x34> bl	00000000 <platform_device_put>
+		return ret;
+00000038 <ak_dock_board_init+0x38> b	00000054 <ak_dock_board_init+0x54>
+	}
+
+	ret = platform_driver_register(&ak_dock_driver);
+0000003c <ak_dock_board_init+0x3c> ldr	r0, [pc, #32]	; 00000064 <ak_dock_board_init+0x64>
+00000040 <ak_dock_board_init+0x40> bl	00000000 <platform_driver_register>
+	if (ret != 0)
+00000044 <ak_dock_board_init+0x44> subs	r4, r0, #0
+00000048 <ak_dock_board_init+0x48> beq	00000054 <ak_dock_board_init+0x54>
+		platform_device_unregister(ak_dock_dev);
+0000004c <ak_dock_board_init+0x4c> ldr	r0, [r5, #136]	; 0x88
+00000050 <ak_dock_board_init+0x50> bl	00000000 <platform_device_unregister>
+
+	return ret;
+}
+00000054 <ak_dock_board_init+0x54> mov	r0, r4
+00000058 <ak_dock_board_init+0x58> pop	{r3, r4, r5, pc}
+0000005c <ak_dock_board_init+0x5c> .word	0x000000d9
+	...
+
+Disassembly of section .exit.text:
+
+void __exit ak_dock_board_exit(void)
+{
+00000000 <ak_dock_board_exit> .word	0xe92d4008
+	platform_device_unregister(ak_dock_dev);
+00000004 <ak_dock_board_exit+0x4> ldr	r3, [pc, #16]	; 0000001c <ak_dock_board_exit+0x1c>
+00000008 <ak_dock_board_exit+0x8> ldr	r0, [r3, #136]	; 0x88
+0000000c <ak_dock_board_exit+0xc> bl	00000000 <platform_device_unregister>
+	platform_driver_unregister(&ak_dock_driver);
+00000010 <ak_dock_board_exit+0x10> ldr	r0, [pc, #8]	; 00000020 <ak_dock_board_exit+0x20>
+}
+00000014 <ak_dock_board_exit+0x14> pop	{r3, lr}
+}
+
+void __exit ak_dock_board_exit(void)
+{
+	platform_device_unregister(ak_dock_dev);
+	platform_driver_unregister(&ak_dock_driver);
+00000018 <ak_dock_board_exit+0x18> b	00000000 <platform_driver_unregister>
+	...

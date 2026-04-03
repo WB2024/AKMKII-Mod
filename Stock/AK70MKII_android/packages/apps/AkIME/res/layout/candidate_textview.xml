@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- android:layout_height="44dp"  -->
+
+<!-- android:maxWidth="155dp" -->
+<com.iriver.ak.widget.AutofitTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="75dp"
+    android:layout_height="wrap_content"
+    android:minHeight="50dp"
+    
+    android:gravity="center"
+    android:drawableRight="@drawable/key_suggetion_line"
+    android:maxLines="2"
+    android:padding="0dp"
+    android:textSize="18sp"
+    android:textColor="@color/candidate_popup_text_color"
+    android:background="@drawable/keypad_auto_word_selector">
+</com.iriver.ak.widget.AutofitTextView>

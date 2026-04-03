@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* 
+**
+** Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+	android:keyWidth="9.8%p" 
+	android:horizontalGap="0.2%p"
+	android:verticalGap="0.1%p" 
+	android:keyHeight="@dimen/key_height">
+
+    <Row>
+        <Key android:codes="@integer/qwerty_code_q" android:keyEdgeFlags="left" android:keyLabel="@string/qwerty_key_q" />
+        <Key android:codes="@integer/qwerty_code_w" android:keyLabel="@string/qwerty_key_w" />
+        <Key android:codes="@integer/qwerty_code_e" android:keyLabel="@string/qwerty_key_e" />
+        <Key android:codes="@integer/qwerty_code_r" android:keyLabel="@string/qwerty_key_r" />
+        <Key android:codes="@integer/qwerty_code_t" android:keyLabel="@string/qwerty_key_t" />
+        <Key android:codes="@integer/qwerty_code_y" android:keyLabel="@string/qwerty_key_y" />
+        <Key android:codes="@integer/qwerty_code_u" android:keyLabel="@string/qwerty_key_u" />
+        <Key android:codes="@integer/qwerty_code_i" android:keyLabel="@string/qwerty_key_i" />
+        <Key android:codes="@integer/qwerty_code_o" android:keyLabel="@string/qwerty_key_o" />
+        <Key android:codes="@integer/qwerty_code_p" android:keyEdgeFlags="right" android:keyLabel="@string/qwerty_key_p" />
+    </Row>
+    <Row>
+        <Key android:codes="@integer/qwerty_code_a" android:keyEdgeFlags="left" android:keyLabel="@string/qwerty_key_a" />
+        <Key android:codes="@integer/qwerty_code_s" android:keyLabel="@string/qwerty_key_s" />
+        <Key android:codes="@integer/qwerty_code_d" android:keyLabel="@string/qwerty_key_d" />
+        <Key android:codes="@integer/qwerty_code_f" android:keyLabel="@string/qwerty_key_f" />
+        <Key android:codes="@integer/qwerty_code_g" android:keyLabel="@string/qwerty_key_g" />
+        <Key android:codes="@integer/qwerty_code_h" android:keyLabel="@string/qwerty_key_h" />
+        <Key android:codes="@integer/qwerty_code_j" android:keyLabel="@string/qwerty_key_j" />
+        <Key android:codes="@integer/qwerty_code_k" android:keyLabel="@string/qwerty_key_k" />
+        <Key android:codes="@integer/qwerty_code_l" android:keyLabel="@string/qwerty_key_l" />
+        <Key android:codes="346" android:keyEdgeFlags="right" android:keyLabel="@string/jpn_q_key_hypen" />
+    </Row>
+    <Row>
+        <Key android:keyWidth="14.8%p" android:codes="@integer/jp_key_global" android:keyEdgeFlags="left" 
+            android:keyIcon="@drawable/key_caps_kana"
+            android:iconPreview="@drawable/key_caps_kana" android:isModifier="true"/>
+        <Key android:codes="@integer/qwerty_code_z" android:keyLabel="@string/qwerty_key_z" />
+        <Key android:codes="@integer/qwerty_code_x" android:keyLabel="@string/qwerty_key_x" />
+        <Key android:codes="@integer/qwerty_code_c" android:keyLabel="@string/qwerty_key_c" />
+        <Key android:codes="@integer/qwerty_code_v" android:keyLabel="@string/qwerty_key_v" />
+        <Key android:codes="@integer/qwerty_code_b" android:keyLabel="@string/qwerty_key_b" />
+        <Key android:codes="@integer/qwerty_code_n" android:keyLabel="@string/qwerty_key_n" />
+        <Key android:codes="@integer/qwerty_code_m" android:keyLabel="@string/qwerty_key_m" />
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_back" android:keyEdgeFlags="right" 
+            android:isRepeatable="true" android:keyIcon="@drawable/key_delete_n" 
+            android:isModifier="true"/>
+   </Row>
+   <Row android:rowEdgeFlags="bottom">
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_hide" android:keyEdgeFlags="left" 
+            android:keyIcon="@drawable/key_keyboard_close_n" 
+            android:iconPreview="@drawable/key_keyboard_close_n" android:isModifier="true"/>
+        <Key android:keyWidth="19.8%p" android:codes="@integer/key_global" android:keyIcon="@drawable/key_ch_etc_n" 
+            android:isModifier="true"/>
+        <Key android:keyWidth="39.8%p" android:codes="@integer/key_space" android:isRepeatable="true" 
+            android:keyIcon="@drawable/key_spacebar_1_n" android:isModifier="true"/>
+        <Key android:keyLabel="@string/label_dot1_key" />
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_enter" android:keyEdgeFlags="right" 
+            android:keyIcon="@drawable/key_enter_bg_n"  android:isModifier="true"
+			android:iconPreview="@drawable/key_enter_bg_n"/>
+    </Row>
+</Keyboard>
+    

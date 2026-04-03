@@ -1,0 +1,158 @@
+/*
+ * linux/arch/arm/mach-tcc893x/board-tcc8930.h
+ *
+ * Copyright (C) 2010 Telechips, Inc.
+ *
+ * This software is licensed under the terms of the GNU General Public
+ * License version 2, as published by the Free Software Foundation, and
+ * may be copied, distributed, and modified under those terms.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+#ifndef __ARCH_ARM_MACH_TCC893X_BOARD_TCC8930_H
+#define __ARCH_ARM_MACH_TCC893X_BOARD_TCC8930_H
+
+
+/**************************************************************
+	GPIO Port
+**************************************************************/
+
+// Nand
+#define GPIO_NAND_RDY0		TCC_GPA(16)
+#if defined(CONFIG_CHIP_TCC8930)
+#define GPIO_NAND_RDY1		TCC_GPD(11)
+#define GPIO_NAND_WP		TCC_GPB(8)
+#elif defined(CONFIG_CHIP_TCC8935) || defined(CONFIG_CHIP_TCC8933)
+#define GPIO_NAND_RDY1		0xFFFFFFFF
+#define GPIO_NAND_WP		TCC_GPD(0)
+#else
+	#error
+#endif
+
+// LCD
+#if defined(CONFIG_CHIP_TCC8930) || defined(CONFIG_CHIP_TCC8935)
+#if defined(CONFIG_LCD_S6E63M0X01)
+#define GPIO_LCD_BL			0xFFFFFFFF
+#define GPIO_LCD_DISPLAY	0xFFFFFFFF
+#define GPIO_LCD_ON			TCC_GPE(30)
+#define GPIO_LCD_RESET		TCC_GPE(29)
+#elif defined(CONFIG_LCD_AK380DISP)
+//AK380
+#define GPIO_LCD_BL			TCC_GPB(29)	//LCD_BL_PWM
+#define GPIO_LCD_DISPLAY	TCC_GPB(30)	//LCD_BL_EN
+#define GPIO_LCD_ON			TCC_GPE(30)	//LCD_PWEN
+#define GPIO_LCD_RESET		TCC_GPE(29)   //LCD_RESET
+
+#elif defined(CONFIG_LCD_AKJR2DISP)
+//#define GPIO_LCD_ON   	TCC_GPF(3)  //MIPI_PWR_EN
+#define GPIO_LCD_ON 			TCC_GPE(23)	//LCD_PWEN
+#define GPIO_LCD_BL 			TCC_GPB(28)
+#define GPIO_LCD_DISPLAY	0xFFFFFFFF
+#define GPIO_LCD_RESET		TCC_GPD(9)  //MIPI_RESET
+
+#elif defined(CONFIG_LCD_N070ICN)
+#define GPIO_LCD_BL			TCC_GPB(29)
+#define GPIO_LCD_DISPLAY	0xFFFFFFFF
+#define GPIO_LCD_ON			TCC_GPE(30) //LCD_PWEN
+#define GPIO_LCD_RESET		TCC_GPE(29) //LCD_RESET
+#else
+//jimi.test
+//#define GPIO_LCD_BL			TCC_GPF(16)
+#define GPIO_LCD_BL			TCC_GPF(5)
+#define GPIO_LCD_DISPLAY	0xFFFFFFFF
+#define GPIO_LCD_ON			TCC_GPE(30)
+#define GPIO_LCD_RESET		TCC_GPE(29)    
+#endif
+#else
+	#error
+#endif
+
+/**************************************************************
+	GPIO Expander
+**************************************************************/
+
+// GPEXT1
+#define GPIO_CODEC_ON	0 //AK_FIXME_LATER		TCC_GPEXT1(1)
+#define GPIO_SD0_ON		0 //AK_FIXME_LATER		TCC_GPEXT1(2)
+#define GPIO_SD1_ON		0 //AK_FIXME_LATER		TCC_GPEXT1(3)
+#define GPIO_EXT_CODEC_ON	0 //AK_FIXME_LATER	TCC_GPEXT1(5)
+#define GPIO_GPS_PWREN		0 //AK_FIXME_LATER	TCC_GPEXT1(6)
+#define GPIO_BT_ON			0 //AK_FIXME_LATER	TCC_GPEXT1(7)
+
+#define GPIO_DXB_ON			0 //AK_FIXME_LATER	TCC_GPEXT1(8)
+#define GPIO_IPOD_ON		0 //AK_FIXME_LATER	TCC_GPEXT1(9)
+#define GPIO_CAS_ON			0 //AK_FIXME_LATER	TCC_GPEXT1(10)
+#define GPIO_FMTC_ON		0 //AK_FIXME_LATER	TCC_GPEXT1(11)
+#define GPIO_PCAM_PWR_ON	0 //AK_FIXME_LATER	TCC_GPEXT1(12)
+#define GPIO_CAM1_ON		0 //AK_FIXME_LATER	TCC_GPEXT1(13)
+#define GPIO_CAM2_ON		0 //AK_FIXME_LATER	TCC_GPEXT1(14)
+#define GPIO_ATAPI_ON		0 //AK_FIXME_LATER	TCC_GPEXT1(15)
+
+// GPEXT2
+#define GPIO_MUTE_CTL		0 //AK_FIXME_LATER	TCC_GPEXT2(0)
+#define GPIO_LVDSIVT_ON		0 //AK_FIXME_LATER	TCC_GPEXT2(1)
+#define GPIO_LVDS_LP_CTRL	0 //AK_FIXME_LATER	TCC_GPEXT2(2)
+#define GPIO_AUTH_RST		0 //AK_FIXME_LATER	TCC_GPEXT2(3)
+#define GPIO_BT_RST			0 //AK_FIXME_LATER	TCC_GPEXT2(4)
+#define GPIO_SDWF_RST		0 //AK_FIXME_LATER	TCC_GPEXT2(5)
+#define GPIO_CAS_RST		0 //AK_FIXME_LATER	TCC_GPEXT2(6)
+#define GPIO_CAS_GP			0 //AK_FIXME_LATER	TCC_GPEXT2(7)
+
+#define GPIO_DXB1_PD		0 //AK_FIXME_LATER	TCC_GPEXT2(8)
+#define GPIO_DXB2_PD		0 //AK_FIXME_LATER	TCC_GPEXT2(9)
+#define GPIO_PWR_CONTROL0	0 //AK_FIXME_LATER	TCC_GPEXT2(10)
+#define GPIO_PWR_CONTROL1	0 //AK_FIXME_LATER	TCC_GPEXT2(11)
+#define GPIO_HDD_RST		0 //AK_FIXME_LATER	TCC_GPEXT2(12)
+#define GPIO_OTG0_VBUS_EN	0 //AK_FIXME_LATER	TCC_GPEXT2(13)
+#define GPIO_OTG1_VBUS_EN	0 //AK_FIXME_LATER	TCC_GPEXT2(14)
+#define GPIO_HOST_VBUS_EN	0 //AK_FIXME_LATER	TCC_GPEXT2(15)
+
+
+// GPEXT3
+#define GPIO_FMT_RST		0 //AK_FIXME_LATER	TCC_GPEXT3(0)
+#define GPIO_FMT_IRQ		0 //AK_FIXME_LATER	TCC_GPEXT3(1)
+#define GPIO_BT_WAKE		0 //AK_FIXME_LATER	TCC_GPEXT3(2)
+#define GPIO_BT_HWAKE		0 //AK_FIXME_LATER	TCC_GPEXT3(3)
+#define GPIO_PHY2_ON		0 //AK_FIXME_LATER	TCC_GPEXT3(4)
+#define GPIO_COMPASS_RST	0 //AK_FIXME_LATER	TCC_GPEXT3(5)
+#define GPIO_CAM_FL_EN		0 //AK_FIXME_LATER	TCC_GPEXT3(6)
+#define GPIO_CAM2_FL_EN		0 //AK_FIXME_LATER	TCC_GPEXT3(7)
+
+#define GPIO_CAM2_RST		0 //AK_FIXME_LATER	TCC_GPEXT3(8)
+#define GPIO_CAM2_PWDN		0 //AK_FIXME_LATER	TCC_GPEXT3(9)
+#define GPIO_TV_SLEEP		0 //AK_FIXME_LATER	TCC_GPEXT3(11)
+#define GPIO_ETH_ON			0 //AK_FIXME_LATER	TCC_GPEXT3(12)
+#define GPIO_ETH_RST		0 //AK_FIXME_LATER	TCC_GPEXT3(13)
+#define GPIO_SMART_AUX1		0 //AK_FIXME_LATER	TCC_GPEXT3(14)
+#define GPIO_SMART_AUX2		0 //AK_FIXME_LATER	TCC_GPEXT3(15)
+
+// GPEXT5	(SV60 Power Sub Board)
+#define GPIO_V_5P0_EN		0 //AK_FIXME_LATER	TCC_GPEXT5(0)
+#define GPIO_HS_HOST_EN		0 //AK_FIXME_LATER	TCC_GPEXT5(2)
+#define GPIO_FS_HOST_EN		0 //AK_FIXME_LATER	TCC_GPEXT5(3)
+#define GPIO_HDMI_EN		0 //AK_FIXME_LATER	TCC_GPEXT5(4)
+#define GPIO_MIPI_EN		0 //AK_FIXME_LATER	TCC_GPEXT5(5)
+#define GPIO_SATA_EN		0 //AK_FIXME_LATER	TCC_GPEXT5(6)
+#define GPIO_LVDS_EN		0 //AK_FIXME_LATER	TCC_GPEXT5(7)
+
+#define GPIO_ATV_EN			0 //AK_FIXME_LATER	TCC_GPEXT5(8)
+#define GPIO_ATAPI_IPOD_EN	0 //AK_FIXME_LATER	TCC_GPEXT5(9)
+#define GPIO_USB_CHARGE_SEL	0 //AK_FIXME_LATER	TCC_GPEXT5(10)
+#define GPIO_USB_SUSPEND	0 //AK_FIXME_LATER	TCC_GPEXT5(11)
+#define GPIO_CHARGE_EN		0 //AK_FIXME_LATER	TCC_GPEXT5(12)
+#define GPIO_SD30_PWR_EN	0 //AK_FIXME_LATER	TCC_GPEXT5(13)
+#define GPIO_SD30_PWR_CTL	0 //AK_FIXME_LATER	TCC_GPEXT5(14)
+#define INT_CHARGE_FINISH	0 //AK_FIXME_LATER	TCC_GPEXT5(15)
+
+
+/**************************************************************
+	Externel Interrupt
+**************************************************************/
+
+#define PMIC_IRQ			INT_EINT6
+
+#endif

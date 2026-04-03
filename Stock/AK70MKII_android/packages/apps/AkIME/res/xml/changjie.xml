@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+/*
+    Changjie Chinese Input Method for Android
+    Copyright (C) 2012 LinkOmnia Ltd.
+
+    Author: Wan Leung Wong (wanleung@linkomnia.com)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+-->
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+	android:keyWidth="9.8%p" 
+	android:horizontalGap="0.2%p"
+	android:verticalGap="0.1%p" 
+	android:keyHeight="@dimen/key_height">
+
+    <Row>
+        <Key android:codes="113" android:keyLabel="@string/changjie_q" android:keyEdgeFlags="left"/>
+        <Key android:codes="119" android:keyLabel="@string/changjie_w"/>
+        <Key android:codes="101" android:keyLabel="@string/changjie_e"/>
+        <Key android:codes="114" android:keyLabel="@string/changjie_r"/>
+        <Key android:codes="116" android:keyLabel="@string/changjie_t"/>
+        <Key android:codes="121" android:keyLabel="@string/changjie_y"/>
+        <Key android:codes="117" android:keyLabel="@string/changjie_u"/>
+        <Key android:codes="105" android:keyLabel="@string/changjie_i"/>
+        <Key android:codes="111" android:keyLabel="@string/changjie_o"/>
+        <Key android:codes="112" android:keyLabel="@string/changjie_p" android:keyEdgeFlags="right"/>
+    </Row>
+    
+    <Row>
+        <Key android:codes="97" android:keyLabel="@string/changjie_a" android:keyEdgeFlags="left"
+        	android:horizontalGap="5.2%p"/>
+        <Key android:codes="115" android:keyLabel="@string/changjie_s"/>
+        <Key android:codes="100" android:keyLabel="@string/changjie_d"/>
+        <Key android:codes="102" android:keyLabel="@string/changjie_f"/>
+        <Key android:codes="103" android:keyLabel="@string/changjie_g"/>
+        <Key android:codes="104" android:keyLabel="@string/changjie_h"/>
+        <Key android:codes="106" android:keyLabel="@string/changjie_j"/>
+        <Key android:codes="107" android:keyLabel="@string/changjie_k"/>
+        <Key android:codes="108" android:keyLabel="@string/changjie_l" android:keyEdgeFlags="right"/>
+    </Row>
+    
+    <Row>
+        <Key android:codes="@integer/key_shift" android:keyIcon="@drawable/key_caps_ch_off"
+                android:keyWidth="14.8%p" android:isModifier="true"
+                android:isSticky="true" android:keyEdgeFlags="left"/>
+        <Key android:codes="122" android:keyLabel="@string/changjie_z"/>
+        <Key android:codes="120" android:keyLabel="@string/changjie_x"/>
+        <Key android:codes="99" android:keyLabel="@string/changjie_c"/>
+        <Key android:codes="118" android:keyLabel="@string/changjie_v"/>
+        <Key android:codes="98" android:keyLabel="@string/changjie_b"/>
+        <Key android:codes="110" android:keyLabel="@string/changjie_n"/>
+        <Key android:codes="109" android:keyLabel="@string/changjie_m"/>
+        <Key android:codes="@integer/key_back" android:keyIcon="@drawable/key_delete_n"
+                android:keyWidth="14.8%p" android:isRepeatable="true"
+                android:keyEdgeFlags="right" android:iconPreview="@drawable/key_delete_n"
+                android:isModifier="true"/>
+    </Row>
+       
+   <Row android:rowEdgeFlags="bottom">
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_hide" android:keyEdgeFlags="left" 
+            android:keyIcon="@drawable/key_keyboard_close_n" android:iconPreview="@drawable/key_keyboard_close_n"
+            android:isModifier="true"/>
+        <Key android:codes="-2" android:keyIcon="@drawable/key_ch_123_n" 
+            android:iconPreview="@drawable/key_ch_123_n" android:isModifier="true"/>
+        <Key android:codes="@integer/key_global" android:keyIcon="@drawable/key_ch_etc_n" 
+            android:iconPreview="@drawable/key_ch_etc_n" android:isModifier="true"/>
+        <Key android:keyWidth="49.8%p" android:codes="@integer/key_space" android:isRepeatable="true" 
+            android:keyIcon="@drawable/key_spacebar_1_n" android:isModifier="true"/>
+        <Key android:keyWidth="14.8%p" android:codes="@integer/key_enter" android:keyEdgeFlags="right" 
+            android:keyIcon="@drawable/key_enter_bg_n" android:iconPreview="@drawable/key_enter_bg_n"
+            android:isModifier="true"/>
+    </Row>
+</Keyboard>
