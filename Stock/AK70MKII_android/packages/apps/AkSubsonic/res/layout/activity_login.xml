@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Login / server setup screen -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/screen_padding">
+
+        <!-- App title / logo area -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/accent"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_subtitle"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_small"
+            android:gravity="center"
+            android:paddingBottom="32dp" />
+
+        <!-- Section: Server -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_server"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_label"
+            android:paddingBottom="4dp" />
+
+        <!-- Host IP row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <EditText
+                android:id="@+id/et_host"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="@string/hint_host"
+                android:inputType="textUri"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:background="@drawable/bg_edit_text"
+                android:padding="@dimen/field_padding"
+                android:textSize="@dimen/text_body"
+                android:singleLine="true"
+                android:imeOptions="actionNext" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  :  "
+                android:textColor="@color/text_secondary"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/text_body"
+                android:paddingTop="4dp" />
+
+            <EditText
+                android:id="@+id/et_port"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/hint_port"
+                android:inputType="number"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:background="@drawable/bg_edit_text"
+                android:padding="@dimen/field_padding"
+                android:textSize="@dimen/text_body"
+                android:singleLine="true"
+                android:imeOptions="actionNext" />
+        </LinearLayout>
+
+        <!-- Section: Credentials -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_credentials"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_label"
+            android:paddingBottom="4dp" />
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="@string/hint_username"
+            android:inputType="text"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:background="@drawable/bg_edit_text"
+            android:padding="@dimen/field_padding"
+            android:textSize="@dimen/text_body"
+            android:singleLine="true"
+            android:imeOptions="actionNext" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:background="@drawable/bg_edit_text"
+            android:padding="@dimen/field_padding"
+            android:textSize="@dimen/text_body"
+            android:singleLine="true"
+            android:imeOptions="actionDone" />
+
+        <!-- Error message -->
+        <TextView
+            android:id="@+id/tv_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/error"
+            android:textSize="@dimen/text_small"
+            android:visibility="gone" />
+
+        <!-- Progress indicator -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+
+        <!-- Connect button -->
+        <Button
+            android:id="@+id/btn_connect"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:text="@string/btn_connect"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_body"
+            android:background="@drawable/bg_button_accent" />
+
+    </LinearLayout>
+</ScrollView>

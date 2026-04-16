@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.iriver.ak.subsoniclient">
+
+    <uses-sdk android:minSdkVersion="21" />
+
+    <!-- Local network streaming -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Keep CPU alive during playback -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Receive hardware media button events -->
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher"
+        android:hardwareAccelerated="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@android:style/Theme.Material">
+
+        <!-- Login / server setup screen -->
+        <activity
+            android:name="com.iriver.ak.subsoniclient.LoginActivity"
+            android:label="@string/login_title"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main library browser (artists) -->
+        <activity
+            android:name="com.iriver.ak.subsoniclient.LibraryActivity"
+            android:label="@string/library_title" />
+
+        <!-- Albums for a selected artist -->
+        <activity
+            android:name="com.iriver.ak.subsoniclient.AlbumListActivity"
+            android:label="@string/albums_title" />
+
+        <!-- Tracks for a selected album -->
+        <activity
+            android:name="com.iriver.ak.subsoniclient.TrackListActivity"
+            android:label="@string/tracks_title" />
+
+        <!-- Now-playing screen -->
+        <activity
+            android:name="com.iriver.ak.subsoniclient.PlayerActivity"
+            android:label="@string/player_title"
+            android:launchMode="singleTop" />
+
+        <!-- Background audio playback service -->
+        <service
+            android:name="com.iriver.ak.subsoniclient.service.PlayerService"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

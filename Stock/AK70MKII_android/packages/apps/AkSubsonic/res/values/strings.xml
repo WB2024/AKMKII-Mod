@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">AkSubsonic</string>
+
+    <!-- Activity titles -->
+    <string name="login_title">Connect to Server</string>
+    <string name="login_subtitle">Subsonic / Navidrome</string>
+    <string name="library_title">Library</string>
+    <string name="albums_title">Albums</string>
+    <string name="tracks_title">Tracks</string>
+    <string name="player_title">Now Playing</string>
+
+    <!-- Login labels / hints -->
+    <string name="label_server">Server</string>
+    <string name="label_credentials">Credentials</string>
+    <string name="hint_host">192.168.1.x</string>
+    <string name="hint_port">4533</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_connect">Connect</string>
+
+    <!-- Validation errors -->
+    <string name="error_host_required">Please enter the server host address.</string>
+    <string name="error_username_required">Please enter your username.</string>
+    <string name="error_password_required">Please enter your password.</string>
+    <string name="error_connection_failed">Could not connect to server.</string>
+    <string name="error_load_failed">Failed to load data.</string>
+
+    <!-- Empty states -->
+    <string name="empty_artists">No artists found in library.</string>
+    <string name="empty_albums">No albums found for this artist.</string>
+    <string name="empty_tracks">No tracks found in this album.</string>
+
+    <!-- Player -->
+    <string name="player_nothing_playing">Nothing playing</string>
+    <string name="action_play">Play</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_previous">Previous</string>
+    <string name="action_next">Next</string>
+
+    <!-- Overflow menu -->
+    <string name="menu_now_playing">Now Playing</string>
+    <string name="menu_settings">Server Settings</string>
+
+    <!-- Plurals (defined as plurals resources below) -->
+</resources>

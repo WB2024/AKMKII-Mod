@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Backgrounds -->
+    <color name="bg_primary">#1A1A1A</color>
+    <color name="bg_card">#2A2A2A</color>
+    <color name="bg_button">#333333</color>
+    <color name="bg_button_pressed">#444444</color>
+
+    <!-- Accent — gold/amber, consistent with audiophile AK brand -->
+    <color name="accent">#C8A96E</color>
+    <color name="accent_dark">#9E7A40</color>
+
+    <!-- Text -->
+    <color name="text_primary">#EFEFEF</color>
+    <color name="text_secondary">#999999</color>
+    <color name="text_hint">#555555</color>
+
+    <!-- UI elements -->
+    <color name="divider">#2E2E2E</color>
+    <color name="error">#CF6679</color>
+    <color name="list_pressed">#2C2C2C</color>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Plurals for album count on artist row -->
+    <plurals name="album_count">
+        <item quantity="one">1 album</item>
+        <item quantity="other">%d albums</item>
+    </plurals>
+
+    <!-- Plurals for track count on album row -->
+    <plurals name="track_count">
+        <item quantity="one">1 track</item>
+        <item quantity="other">%d tracks</item>
+    </plurals>
+</resources>

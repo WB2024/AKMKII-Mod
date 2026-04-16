@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Simple music note icon used as app launcher icon and notification icon.
+     A plain vector shape — no bitmap, density immune. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Dark background circle -->
+    <path
+        android:fillColor="#1A1A1A"
+        android:pathData="M24,24 m-24,0 a24,24 0 1,0 48,0 a24,24 0 1,0 -48,0" />
+
+    <!-- Gold music note -->
+    <path
+        android:fillColor="#C8A96E"
+        android:pathData="M30,12 L30,28 C30,30.2 28.2,32 26,32 C23.8,32 22,30.2 22,28
+                          C22,25.8 23.8,24 26,24 C26.7,24 27.4,24.2 28,24.5
+                          L28,18 L20,20 L20,32 C20,34.2 18.2,36 16,36
+                          C13.8,36 12,34.2 12,32 C12,29.8 13.8,28 16,28
+                          C16.7,28 17.4,28.2 18,28.5 L18,16 Z" />
+
+</vector>

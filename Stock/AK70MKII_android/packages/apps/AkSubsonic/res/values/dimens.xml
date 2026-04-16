@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Screen / layout spacing -->
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="field_padding">10dp</dimen>
+    <dimen name="list_item_padding">10dp</dimen>
+
+    <!-- List row heights -->
+    <dimen name="list_item_height">64dp</dimen>
+    <dimen name="track_item_height">56dp</dimen>
+
+    <!-- Thumbnail in list rows -->
+    <dimen name="list_thumb_size">48dp</dimen>
+
+    <!-- Button heights -->
+    <dimen name="btn_height">48dp</dimen>
+    <dimen name="control_btn_size">56dp</dimen>
+    <dimen name="control_btn_large">68dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_title">24sp</dimen>
+    <dimen name="text_title_medium">18sp</dimen>
+    <dimen name="text_body">15sp</dimen>
+    <dimen name="text_small">13sp</dimen>
+    <dimen name="text_label">12sp</dimen>
+</resources>
